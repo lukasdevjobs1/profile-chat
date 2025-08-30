@@ -107,6 +107,38 @@ github-profile-chat/
 - Depende do hardware local para processamento de IA
 - Projeto educacional - não recomendado para produção sem revisões
 
+## 🔒 Segurança e Considerações
+
+### **Riscos Potenciais:**
+- **APIs Experimentais**: Chrome Prompt API ainda é experimental, pode ter bugs ou ser alterada/removida pelo Google
+- **Processamento Local**: IA roda no navegador, dados não saem do dispositivo (mais seguro), mas depende do hardware local
+- **Código Público**: Todo código está visível no GitHub, incluindo a lógica do chatbot e prompt do sistema
+
+### **Mitigações Implementadas:**
+- ✅ Sem dados sensíveis ou credenciais no código
+- ✅ Não conecta com APIs externas - tudo roda offline
+- ✅ Validações de segurança (verifica Chrome, APIs disponíveis, controle de abort)
+- ✅ Escopo limitado - chatbot só responde sobre o perfil, não acessa dados do sistema
+
+### **Recomendações Adicionais:**
+
+#### **1. Monitore o Projeto:**
+- Acompanhe atualizações do Chrome e mudanças nas APIs experimentais
+- Teste regularmente o funcionamento
+- Verifique logs de erro no console do navegador
+
+#### **2. Para Uso em Produção:**
+- Adicione mais validações de entrada do usuário
+- Implemente rate limiting para evitar spam
+- Considere migrar para APIs estáveis quando disponíveis
+- Adicione monitoramento de erros
+
+#### **3. Transparência:**
+- Sempre informe aos usuários que é um projeto experimental
+- Documente claramente as limitações
+- Mantenha o código público para auditoria
+- Informe sobre o processamento local dos dados
+
 ## 📝 Licença
 
 MIT License - veja o arquivo LICENSE para detalhes.
