@@ -132,6 +132,6 @@ git push origin main
 
 ## 📝 URLs de Exemplo
 
-- **Repositório**: `https://github.com/lukg/profile-chat`
-- **GitHub Pages**: `https://lukg.github.io/profile-chat/`
+- **Repositório**: `https://github.com/lukasdevjobs1/profile-chat`
+- **GitHub Pages**: `https://lukasdevjobs1.github.io/profile-chat/`
 - **Integração**: `<script src="https://lukg.github.io/profile-chat/sdk/src/index.js"></script>`
