@@ -1,14 +1,14 @@
 {
   "name": "lukg-github-profile-chat",
   "version": "1.0.0",
-  "description": "Chat AI para perfil do GitHub do LukG",
+  "description": "Chat AI para perfil do GitHub",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server . -p 3000 -c-1",
     "dev": "npx http-server . -p 3000 -c-1 -o"
   },
   "keywords": ["chatbot", "ai", "github", "profile"],
-  "author": "LukG",
+  "author": "Lukas Albertino",
   "license": "MIT",
   "devDependencies": {
     "http-server": "^14.1.1"
