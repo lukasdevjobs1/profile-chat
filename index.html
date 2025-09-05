@@ -1,103 +1,163 @@
+<!--
+/**
+ * PORTFOLIO LUKAS GOMES - PÁGINA PRINCIPAL
+ * 
+ * Arquivo: index.html
+ * Descrição: Página principal do portfólio com design moderno
+ * 
+ * Estrutura:
+ * - Header: Navegação fixa com menu responsivo
+ * - Hero: Seção de apresentação principal
+ * - Projects: Grid de projetos do GitHub
+ * - Technologies: Habilidades técnicas por categoria
+ * - About: Informações pessoais e estatísticas
+ * - Contact: Links de contato e redes sociais
+ * - Footer: Rodapé com informações adicionais
+ * 
+ * Tecnologias:
+ * - HTML5 semântico
+ * - CSS3 com variáveis e grid/flexbox
+ * - JavaScript ES6+ (classes, async/await)
+ * - Design responsivo mobile-first
+ * - Integração com chatbot AI
+ */
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukas Albertino - Perfil GitHub com AI Chat</title>
-    <link rel="icon" type="image/x-icon" href="./botData/avatar.webp">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0d1117;
-            color: #f0f6fc;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #58a6ff;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .profile-section {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .tech-badge {
-            background: #21262d;
-            color: #58a6ff;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9em;
-            border: 1px solid #30363d;
-        }
-        .chat-info {
-            background: #0d1117;
-            border: 1px solid #0969da;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .chat-info h3 {
-            color: #0969da;
-            margin-top: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>👋 Olá! Eu sou o Lukas Albertino</h1>
-        
-        <div class="profile-section">
-            <h2>🚀 Sobre mim</h2>
-            <p>Desenvolvedor Full Stack apaixonado por tecnologia e inovação. Sempre em busca de aprender novas tecnologias e compartilhar conhecimento com a comunidade.</p>
-            
-            <h3>💻 Stack Tecnológica</h3>
-            <div class="tech-stack">
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">TypeScript</span>
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Docker</span>
-                <span class="tech-badge">AWS</span>
-                <span class="tech-badge">MongoDB</span>
-                <span class="tech-badge">PostgreSQL</span>
-            </div>
-        </div>
+    <title>Lukas Gomes - Desenvolvedor FullStack</title>
+    <meta name="description"
+        content="Desenvolvedor FullStack especializado em JavaScript, Python, React e IA. Criador de chatbots e soluções web modernas.">
 
-        <div class="profile-section">
-            <h2>🎯 Foco Atual</h2>
+    <!-- Estilos principais -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ===== HEADER - NAVEGAÇÃO PRINCIPAL ===== -->
+    <!-- Header fixo com menu responsivo e efeito glass -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">LukG</div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-section="home">Início</a></li>
+                <li><a href="#" class="nav-link" data-section="projects">Projetos</a></li>
+                <li><a href="#" class="nav-link" data-section="technologies">Tecnologias</a></li>
+                <li><a href="#" class="nav-link" data-section="about">Sobre</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contato</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobile-menu">☰</button>
+        </nav>
+        <div class="mobile-nav" id="mobile-nav">
             <ul>
-                <li>Desenvolvimento de aplicações web modernas</li>
-                <li>Arquitetura de microsserviços</li>
-                <li>DevOps e automação</li>
-                <li>Inteligência Artificial e Machine Learning</li>
+                <li><a href="#" class="nav-link" data-section="home">Início</a></li>
+                <li><a href="#" class="nav-link" data-section="projects">Projetos</a></li>
+                <li><a href="#" class="nav-link" data-section="technologies">Tecnologias</a></li>
+                <li><a href="#" class="nav-link" data-section="about">Sobre</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contato</a></li>
             </ul>
         </div>
+    </header>
 
-        <div class="chat-info">
-            <h3>🤖 Chat AI Disponível!</h3>
-            <p>Clique no ícone do chat no canto inferior direito para conversar comigo através do meu assistente pessoal. Ele pode responder perguntas sobre meus projetos, tecnologias e experiências!</p>
-            <p><small>💡 Funciona apenas no Chrome com as flags experimentais ativadas</small></p>
+    <!-- ===== HERO SECTION - APRESENTAÇÃO PRINCIPAL ===== -->
+    <!-- Seção de abertura com nome, descrição e CTA -->
+    <section id="home" class="hero section active">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Lukas Gomes</h1>
+                <p>Desenvolvedor FullStack.<br>
+                    Criando soluções web modernas.</p>
+                <a href="#" class="cta-button nav-link" data-section="projects">Ver Projetos</a>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div id="projects-grid" class="projects-grid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="section">
+        <div class="container">
+            <h2 class="section-title">Tecnologias</h2>
+            <div id="tech-grid" class="tech-grid">
+                <!-- Technologies will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Me chamo Lukas Albertino Gomes, sou natural de Fortaleza-CE.
+                    Atualmente, estou cursando Análise e Desenvolvimento de Sistemas na UniSantaCruz.
+                    Sou apaixonado por tecnologia e compartilho meu conhecimento através do GitHub e LinkedIn.
+                </p>
+                <p class="about-text">
+                    Especializado em desenvolvimento FullStack com foco em JavaScript, Python, React e integração com
+                    IA.
+                    Tenho experiência em criar chatbots inteligentes, sites responsivos e soluções web modernas.
+                </p>
+                <div id="stats-grid" class="stats-grid">
+                    <!-- Stats will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:luk.devjobs@gmail.com">luk.devjobs@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/lukas-gomes-4470a2269/" target="_blank">Lukas Gomes</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/lukasdevjobs1" target="_blank">@lukasdevjobs1</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/5585992570216" target="_blank">Conversar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Lukas Gomes. Desenvolvido com ❤️ e café ☕</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
     <script type="module" src="./sdk/src/index.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -2,3 +2,9 @@ node_modules/
 .DS_Store
 *.log
 .env
+
+# API Keys e configurações sensíveis
+botData/api-config.json
+
+# Arquivos temporários
+create-avatar.html

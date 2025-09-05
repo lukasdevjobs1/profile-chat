@@ -8,9 +8,9 @@
   "botBubble": "#0d1117",
   "userText": "#f0f6fc",
   "botText": "#f0f6fc",
-  "iconUrl": "./botData/avatar.webp",
-  "botAvatar": "./botData/avatar.webp",
+  "iconUrl": "./botData/logo2.webp",
+  "botAvatar": "./botData/logo2.webp",
   "welcomeBubble": "👋 Olá! Sou o assistente do LukG",
-  "firstBotMessage": "Oi! Sou o assistente pessoal do LukG. Posso te ajudar com informações sobre projetos, tecnologias e experiências dele. O que você gostaria de saber?",
+  "firstBotMessage": "Sou o assistente pessoal do LukG. Posso te ajudar com informações sobre projetos, tecnologias e experiências dele. O que você gostaria de saber?",
   "typingDelay": 0.8
 }

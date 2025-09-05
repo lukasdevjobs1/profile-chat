@@ -1,0 +1,234 @@
+{
+  "projects": [
+    {
+      "name": "Git_Projects",
+      "description": "Portfólio para demonstrar habilidades técnicas",
+      "technologies": ["Python", "HTML", "CSS", "JavaScript"],
+      "url": "https://github.com/lukasdevjobs1/Git_Projects",
+      "highlights": ["Projeto em destaque no README", "Licença MIT"],
+      "stars": 1,
+      "status": "Ativo"
+    },
+    {
+      "name": "profile-chat",
+      "description": "Portfolio moderno com ChatBot AI integrado",
+      "technologies": ["JavaScript", "HTML", "CSS", "AI", "Modern Design"],
+      "url": "https://github.com/lukasdevjobs1/profile-chat",
+      "live_url": "https://lukasdevjobs1.github.io/profile-chat/",
+      "highlights": [
+        "Design inspirado em sites webs modernos",
+        "ChatBot AI",
+        "Interface moderna",
+        "Responsivo"
+      ],
+      "stars": 0,
+      "status": "Ativo"
+    },
+    {
+      "name": "Exercicios_praticos_InfinitySchool",
+      "description": "Exercícios práticos da jornada de aprendizado",
+      "technologies": ["Python"],
+      "url": "https://github.com/lukasdevjobs1/Exercicios_praticos_InfinitySchool",
+      "highlights": ["Exercícios educacionais", "1 fork"],
+      "stars": 1,
+      "forks": 1,
+      "status": "Ativo"
+    },
+    {
+      "name": "bia",
+      "description": "Projeto em JavaScript",
+      "technologies": ["JavaScript"],
+      "url": "https://github.com/lukasdevjobs1/bia",
+      "highlights": ["Projeto original"],
+      "stars": 1,
+      "status": "Ativo"
+    }
+  ],
+  "forked_projects": [
+    {
+      "name": "semana-javascript-expert09",
+      "description": "Criando um chatbot inteligente 100% offline e no navegador",
+      "technologies": ["JavaScript", "AI", "Chatbot"],
+      "url": "https://github.com/lukasdevjobs1/semana-javascript-expert09",
+      "highlights": ["Chatbot offline", "JavaScript Expert"],
+      "stars": 1,
+      "type": "Fork"
+    },
+    {
+      "name": "grokking_algorithms",
+      "description": "Código do livro Grokking Algorithms",
+      "technologies": ["Algoritmos", "Estruturas de Dados"],
+      "url": "https://github.com/lukasdevjobs1/grokking_algorithms",
+      "highlights": ["Estudo de algoritmos", "Livro técnico"],
+      "stars": 1,
+      "type": "Fork"
+    },
+    {
+      "name": "developer-roadmap",
+      "description": "Roadmaps interativos para desenvolvedores",
+      "technologies": ["Roadmaps", "Carreira"],
+      "url": "https://github.com/lukasdevjobs1/developer-roadmap",
+      "highlights": ["Guias de carreira", "Roadmap.sh"],
+      "stars": 1,
+      "type": "Fork"
+    },
+    {
+      "name": "mcp",
+      "description": "AWS MCP Servers - Model Context Protocol",
+      "technologies": ["AWS", "MCP", "Cloud"],
+      "url": "https://github.com/lukasdevjobs1/mcp",
+      "highlights": ["AWS Integration", "Model Context Protocol"],
+      "stars": 1,
+      "type": "Fork"
+    },
+    {
+      "name": "BibliotecaDev",
+      "description": "Biblioteca de livros essenciais da programação",
+      "technologies": ["Recursos", "Livros"],
+      "url": "https://github.com/lukasdevjobs1/BibliotecaDev",
+      "highlights": ["Recursos educacionais", "Licença MIT"],
+      "stars": 1,
+      "type": "Fork"
+    },
+    {
+      "name": "Desafios_Infinity_School",
+      "description": "Desafios de lógica de programação com Python",
+      "technologies": ["Python", "Lógica"],
+      "url": "https://github.com/lukasdevjobs1/Desafios_Infinity_School",
+      "highlights": ["Desafios educacionais", "Python"],
+      "stars": 1,
+      "type": "Fork"
+    },
+    {
+      "name": "Agents-Prompts",
+      "description": "Prompts para agentes de IA",
+      "technologies": ["AI", "Prompts", "Agents"],
+      "url": "https://github.com/lukasdevjobs1/Agents-Prompts",
+      "highlights": ["IA e Prompts", "GPL-3.0"],
+      "stars": 1,
+      "type": "Fork"
+    }
+  ],
+  "technologies": {
+    "frontend": {
+      "HTML": {
+        "level": "Avançado",
+        "projects": ["lukasdevjobs1", "Git_Projects", "profile-chat"],
+        "description": "Estruturação semântica, GitHub Pages"
+      },
+      "CSS": {
+        "level": "Avançado",
+        "projects": ["lukasdevjobs1", "Git_Projects", "profile-chat"],
+        "description": "Layouts responsivos, interfaces modernas"
+      },
+      "JavaScript": {
+        "level": "Avançado",
+        "projects": [
+          "lukasdevjobs1",
+          "bia",
+          "profile-chat",
+          "semana-javascript-expert09"
+        ],
+        "description": "Chatbots AI, integração com APIs, desenvolvimento frontend"
+      }
+    },
+    "backend": {
+      "Python": {
+        "level": "Intermediário/Avançado",
+        "projects": [
+          "Git_Projects",
+          "Exercicios_praticos_InfinitySchool",
+          "Desafios_Infinity_School"
+        ],
+        "description": "Lógica de programação, algoritmos, automação"
+      }
+    },
+    "ai_chatbots": {
+      "Chatbot_Development": {
+        "level": "Básico/Intermediário",
+        "projects": ["profile-chat", "semana-javascript-expert09"],
+        "description": "Chatbots AI personalizados, integração com IA"
+      },
+      "AI_Integration": {
+        "level": "Básico/Intermediário",
+        "projects": ["Agents-Prompts", "semana-javascript-expert09"],
+        "description": "Prompts para agentes, chatbots offline"
+      }
+    },
+    "cloud": {
+      "AWS": {
+        "level": "Básico/Intermediário",
+        "projects": ["mcp"],
+        "description": "AWS MCP Servers, Model Context Protocol"
+      },
+      "GitHub_Pages": {
+        "level": "Avançado",
+        "projects": ["lukasdevjobs1", "profile-chat"],
+        "description": "Deploy e hospedagem de sites estáticos"
+      }
+    },
+    "tools": {
+      "Git": {
+        "level": "Avançado",
+        "projects": ["Todos os 13 repositórios"],
+        "description": "Controle de versão, colaboração, forks"
+      },
+      "GitHub": {
+        "level": "Avançado",
+        "projects": ["Todos os 13 repositórios"],
+        "description": "13 repositórios, GitHub Pages, licenças MIT"
+      }
+    },
+    "algorithms": {
+      "Data_Structures": {
+        "level": "Básico/Intermediário",
+        "projects": ["grokking_algorithms"],
+        "description": "Estudo de algoritmos e estruturas de dados"
+      },
+      "Problem_Solving": {
+        "level": "Básico/Intermediário",
+        "projects": [
+          "Exercicios_praticos_InfinitySchool",
+          "Desafios_Infinity_School"
+        ],
+        "description": "Lógica de programação, desafios práticos"
+      }
+    }
+  },
+  "stats": {
+    "totalRepositories": 13,
+    "originalProjects": 5,
+    "forkedProjects": 8,
+    "totalStars": 11,
+    "totalForks": 1,
+    "githubPagesProjects": 2,
+    "mainLanguages": ["JavaScript", "Python", "HTML", "CSS"],
+    "specialties": [
+      "Desenvolvimento de Chatbots AI",
+      "GitHub Pages e Deploy",
+      "Desenvolvimento Full Stack",
+      "Lógica de Programação Python",
+      "Interfaces Responsivas",
+      "Integração com IA"
+    ],
+    "activeProjects": [
+      "profile-chat (Portfolio moderno + Chatbot)",
+      "Git_Projects (Portfólio)",
+      "lukasdevjobs1 (Site pessoal)",
+      "Exercicios_praticos_InfinitySchool (Python)"
+    ],
+    "learningFocus": [
+      "Algoritmos (grokking_algorithms)",
+      "JavaScript Expert (semana-javascript-expert09)",
+      "AWS e Cloud (mcp)",
+      "Roadmaps de Carreira (developer-roadmap)"
+    ]
+  },
+  "contact_info": {
+    "github": "https://github.com/lukasdevjobs1",
+    "email": "luk.devjobs@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/lukas-gomes-4470a2269/",
+    "location": "Fortaleza-CE",
+    "education": "Análise e Desenvolvimento de Sistemas - UniSantaCruz"
+  }
+}
