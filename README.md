@@ -74,49 +74,9 @@ profile-chat/
 
 ## 🚀 Como Usar
 
-### 1. Acesso Direto
+###  Acesso Direto
 - **GitHub Pages**: [lukasdevjobs1.github.io/profile-chat](https://lukasdevjobs1.github.io/profile-chat/)
 - **Vercel**: [profile-chat-lukasdevjobs1.vercel.app](https://profile-chat-lukasdevjobs1.vercel.app/)
-
-### 2. Instalação Local
-
-```bash
-# Clone o repositório
-git clone https://github.com/lukasdevjobs1/profile-chat.git
-
-# Entre no diretório
-cd profile-chat
-
-# Configure a API key (necessário para funcionalidade completa)
-cp botData/api-config.example.json botData/api-config.json
-# Edite api-config.json com sua chave da Groq API
-
-# Sirva localmente
-python -m http.server 8000
-# ou
-npx serve .
-```
-
-### 3. Deploy
-
-#### GitHub Pages
-```bash
-# Push para branch main
-git push origin main
-# GitHub Pages deploy automático
-```
-
-#### Vercel
-```bash
-# Instale Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel --prod
-
-# Configure variável de ambiente
-vercel env add GROQ_API_KEY
-```
 
 ## 💬 Exemplos de Conversas
 
@@ -161,31 +121,6 @@ O chatbot conhece detalhadamente:
 - **AI/Chatbots**: Groq API, Prompt Engineering
 - **Cloud**: AWS, GitHub Pages, Vercel
 - **Tools**: Git, GitHub, Cursor IDE
-
-## 🔧 Configuração Avançada
-
-### Variáveis de Ambiente
-```bash
-# Vercel
-GROQ_API_KEY=your_groq_api_key_here
-
-# Local (.env)
-GROQ_API_KEY=your_groq_api_key_here
-```
-
-### Personalização do Chatbot
-Edite `botData/chatbot-config.json`:
-```json
-{
-  "name": "Seu Nome",
-  "title": "Seu Título",
-  "avatar": "./botData/seu-avatar.webp",
-  "primaryColor": "#sua-cor"
-}
-```
-
-### Atualização do Catálogo
-Edite `botData/projectsCatalog.json` para incluir seus projetos.
 
 ## 🤝 Contribuições
 
