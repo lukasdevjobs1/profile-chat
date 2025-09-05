@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste API Chatbot</title>
+</head>
+<body>
+    <h1>Teste da API do Chatbot</h1>
+    <button onclick="testAPI()">Testar API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testando...';
+            
+            try {
+                const response = await fetch('https://profile-chat-bot.vercel.app/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        message: 'Olá, você pode me falar sobre o Lukas?' 
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                resultDiv.innerHTML = `<h3>Resposta da API:</h3><p>${data.response}</p>`;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<h3>Erro:</h3><p>${error.message}</p>`;
+                console.error('Erro:', error);
+            }
+        }
+    </script>
+</body>
+</html>

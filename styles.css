@@ -47,6 +47,17 @@
     
     /* Gradiente principal */
     --gradient: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    
+    /* Variáveis do Chatbot */
+    --primaryColor: #0969da;
+    --buttonColor: #0969da;
+    --backgroundColor: #0d1117;
+    --headerColor: #161b22;
+    --userBubble: #21262d;
+    --botBubble: #0d1117;
+    --userText: #f0f6fc;
+    --botText: #f0f6fc;
+    --typingDotDuration: 0.8s;
 }
 
 body {
