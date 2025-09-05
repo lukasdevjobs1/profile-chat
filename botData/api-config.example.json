@@ -1,0 +1,7 @@
+{
+  "groq": {
+    "apiKey": "SUA_CHAVE_GROQ_AQUI",
+    "model": "llama-3.1-8b-instant",
+    "baseUrl": "https://api.groq.com/openai/v1/chat/completions"
+  }
+}

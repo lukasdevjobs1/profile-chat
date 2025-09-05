@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "name": "lukasdevjobs1",
+      "description": "Site pessoal com chatbot AI integrado - GitHub Pages",
+      "technologies": ["JavaScript", "HTML", "CSS", "AI Integration"],
+      "url": "https://github.com/lukasdevjobs1/lukasdevjobs1",
+      "live_url": "https://lukasdevjobs1.github.io/lukasdevjobs1/",
+      "highlights": [
+        "Chatbot AI personalizado",
+        "GitHub Pages",
+        "Interface responsiva"
+      ],
+      "stars": 1,
+      "status": "Ativo"
+    },
+    {
       "name": "Git_Projects",
       "description": "Portfólio para demonstrar habilidades técnicas",
       "technologies": ["Python", "HTML", "CSS", "JavaScript"],
@@ -11,16 +25,11 @@
     },
     {
       "name": "profile-chat",
-      "description": "Portfolio moderno com ChatBot AI integrado",
-      "technologies": ["JavaScript", "HTML", "CSS", "AI", "Modern Design"],
+      "description": "ChatBot AI para perfil profissional",
+      "technologies": ["JavaScript", "HTML", "CSS", "AI"],
       "url": "https://github.com/lukasdevjobs1/profile-chat",
       "live_url": "https://lukasdevjobs1.github.io/profile-chat/",
-      "highlights": [
-        "Design inspirado em sites webs modernos",
-        "ChatBot AI",
-        "Interface moderna",
-        "Responsivo"
-      ],
+      "highlights": ["ChatBot AI", "GitHub Pages", "Licença MIT"],
       "stars": 0,
       "status": "Ativo"
     },
@@ -130,6 +139,16 @@
           "semana-javascript-expert09"
         ],
         "description": "Chatbots AI, integração com APIs, desenvolvimento frontend"
+      },
+      "React": {
+        "level": "Intermediário",
+        "projects": ["Projetos em desenvolvimento"],
+        "description": "Componentes funcionais e hooks"
+      },
+      "Vue.js": {
+        "level": "Básico",
+        "projects": ["projeto-vue-exemplo"],
+        "description": "Framework progressivo, composition API"
       }
     },
     "backend": {
@@ -146,7 +165,11 @@
     "ai_chatbots": {
       "Chatbot_Development": {
         "level": "Básico/Intermediário",
-        "projects": ["profile-chat", "semana-javascript-expert09"],
+        "projects": [
+          "lukasdevjobs1",
+          "profile-chat",
+          "semana-javascript-expert09"
+        ],
         "description": "Chatbots AI personalizados, integração com IA"
       },
       "AI_Integration": {
@@ -181,12 +204,12 @@
     },
     "algorithms": {
       "Data_Structures": {
-        "level": "Básico/Intermediário",
+        "level": "Intermediário",
         "projects": ["grokking_algorithms"],
         "description": "Estudo de algoritmos e estruturas de dados"
       },
       "Problem_Solving": {
-        "level": "Básico/Intermediário",
+        "level": "Intermediário",
         "projects": [
           "Exercicios_praticos_InfinitySchool",
           "Desafios_Infinity_School"
@@ -212,9 +235,9 @@
       "Integração com IA"
     ],
     "activeProjects": [
-      "profile-chat (Portfolio moderno + Chatbot)",
+      "lukasdevjobs1 (Site pessoal + Chatbot)",
       "Git_Projects (Portfólio)",
-      "lukasdevjobs1 (Site pessoal)",
+      "profile-chat (ChatBot AI)",
       "Exercicios_praticos_InfinitySchool (Python)"
     ],
     "learningFocus": [

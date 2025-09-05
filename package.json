@@ -1,16 +1,13 @@
 {
-  "name": "lukg-github-profile-chat",
-  "version": "1.0.0",
-  "description": "Chat AI para perfil do GitHub",
-  "main": "index.html",
+  "name": "lukasdevjobs1-chatbot",
+  "version": "2.0.0",
+  "description": "Chatbot AI pessoal com integração GitHub",
+  "type": "module",
   "scripts": {
-    "start": "npx http-server . -p 3000 -c-1",
-    "dev": "npx http-server . -p 3000 -c-1 -o"
+    "dev": "python -m http.server 8000"
   },
-  "keywords": ["chatbot", "ai", "github", "profile"],
-  "author": "Lukas Albertino",
-  "license": "MIT",
-  "devDependencies": {
-    "http-server": "^14.1.1"
+  "dependencies": {},
+  "engines": {
+    "node": "22.x"
   }
 }

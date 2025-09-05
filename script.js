@@ -46,7 +46,7 @@ class PortfolioApp {
      */
     async loadProjects() {
         try {
-            const response = await fetch('./data/projects.json');
+            const response = await fetch('./botData/projectsCatalog.json');
             const data = await response.json();
             
             // Armazena dados carregados

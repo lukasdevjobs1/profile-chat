@@ -1,15 +1,38 @@
-node_modules/
-.DS_Store
-*.log
-.env
-
-# API Keys e configurações sensíveis
+# Dados sensíveis
 botData/api-config.json
+.env
+*.key
 
-# Código do Chatbot (proprietário)
-sdk/
-api/
-botData/systemPrompt.txt
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Arquivos temporários
-create-avatar.html
+# Dependências
+node_modules/
+.npm
+.yarn
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporários
+*.tmp
+*.temp
+repos.json
