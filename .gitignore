@@ -6,5 +6,10 @@ node_modules/
 # API Keys e configurações sensíveis
 botData/api-config.json
 
+# Código do Chatbot (proprietário)
+sdk/
+api/
+botData/systemPrompt.txt
+
 # Arquivos temporários
 create-avatar.html

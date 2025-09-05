@@ -1,157 +1,87 @@
-# 🤖 LukG GitHub Profile Chat
+# 💼 Lukas Gomes - Portfolio Pessoal
 
-Chat AI inteligente para perfil do GitHub, rodando 100% offline no navegador usando Chrome Prompt API.
+> Portfolio moderno com chatbot AI integrado para apresentar projetos e habilidades técnicas.
 
-## 🎯 Sobre
+## 🎯 Sobre o Projeto
 
-Este é um chatbot personalizado que pode ser integrado ao seu perfil do GitHub ou qualquer site pessoal. Ele roda completamente no navegador usando as APIs experimentais de IA do Chrome, sem necessidade de backend.
+Portfolio pessoal desenvolvido com design moderno inspirado no Cursor, apresentando:
+
+- **Projetos do GitHub** com integração dinâmica
+- **Chatbot AI personalizado** para interação com visitantes
+- **Design responsivo** otimizado para todos os dispositivos
+- **Tema escuro moderno** com gradientes azul/roxo
 
 ## ✨ Características
 
-- 🔒 **100% Offline** - Nenhum dado é enviado para servidores externos
-- 🎨 **Tema GitHub** - Design inspirado no GitHub com cores personalizadas
-- 💬 **Streaming de Respostas** - Respostas em tempo real com indicador de digitação
-- 🛑 **Controle de Parada** - Possibilidade de interromper a geração de respostas
-- 📱 **Responsivo** - Funciona perfeitamente em dispositivos móveis
+- 🎨 **Design Moderno** - Interface inspirada em ferramentas de desenvolvimento atuais
+- 🤖 **Chatbot Inteligente** - Assistente AI que responde sobre projetos e experiências
+- 📱 **Totalmente Responsivo** - Funciona perfeitamente em desktop, tablet e mobile
+- ⚡ **Performance Otimizada** - Carregamento rápido e animações suaves
+- 🔒 **Seguro** - Sem dados sensíveis expostos publicamente
 
-## 🚀 Como usar
+## 🚀 Demonstração
 
-### Pré-requisitos
+**🌐 Acesse:** [lukasdevjobs1.github.io/profile-chat](https://lukasdevjobs1.github.io/profile-chat)
 
-1. **Google Chrome** (versão recente)
-2. Ativar a flag experimental:
-   - Acesse: `chrome://flags/#prompt-api-for-gemini-nano`
-   - Defina como "Enabled"
-   - Reinicie o Chrome
+### Funcionalidades Principais:
 
-### Instalação Local
+1. **Navegação por Seções**
+   - Início com apresentação
+   - Projetos do GitHub
+   - Tecnologias e habilidades
+   - Informações pessoais
+   - Contatos e redes sociais
 
-```bash
-# Clone o repositório
-git clone [seu-repositorio]
+2. **Chatbot Interativo**
+   - Responde perguntas sobre projetos
+   - Explica tecnologias utilizadas
+   - Fornece informações de contato
+   - Interface conversacional moderna
 
-# Entre na pasta do projeto
-cd github-profile-chat
+## 🛠️ Tecnologias Utilizadas
 
-# Instale as dependências
-npm install
+### Frontend
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização moderna com variáveis CSS
+- **JavaScript ES6+** - Lógica interativa e dinâmica
 
-# Execute o servidor local
-npm start
-```
+### Chatbot & IA
+- **Groq API** - Processamento de linguagem natural
+- **Chrome Prompt API** - IA local como fallback
+- **Arquitetura Híbrida** - Máxima disponibilidade
 
-Acesse: `http://localhost:3000`
+### Deploy & Hospedagem
+- **GitHub Pages** - Hospedagem estática
+- **Vercel** - Servidor proxy para APIs
+- **Git** - Controle de versão
 
-### Integração em Outros Sites
+## 📊 Estatísticas do Projeto
 
-Para usar o chatbot em qualquer site, adicione este código no final do `<body>`:
+- 📁 **13 Repositórios** no GitHub
+- ⭐ **11 Stars** recebidas
+- 🔄 **8 Projetos** com fork de estudos
+- 🌐 **2 Sites** publicados no GitHub Pages
 
-```html
-<script type="module" src="https://seu-dominio.com/sdk/src/index.js"></script>
-```
+## 📞 Contato
 
-## 🎨 Personalização
+**Lukas Albertino Gomes**
+- 📧 Email: [luk.devjobs@gmail.com](mailto:luk.devjobs@gmail.com)
+- 💼 LinkedIn: [Lukas Gomes](https://www.linkedin.com/in/lukas-gomes-4470a2269/)
+- 🐙 GitHub: [@lukasdevjobs1](https://github.com/lukasdevjobs1)
+- 💬 WhatsApp: [Conversar](https://wa.me/5585992570216)
+- 📍 Localização: Fortaleza-CE, Brasil
 
-### Configuração do Bot
+## 🎓 Formação
 
-Edite `botData/chatbot-config.json`:
-
-```json
-{
-  "primaryColor": "#0969da",
-  "chatbotName": "Seu Nome AI Assistant",
-  "welcomeBubble": "👋 Olá! Como posso ajudar?",
-  "firstBotMessage": "Sua mensagem inicial aqui..."
-}
-```
-
-### Prompt do Sistema
-
-Edite `botData/systemPrompt.txt` para personalizar o comportamento do assistente.
-
-### Avatar
-
-Substitua `botData/avatar.webp` pela sua imagem (recomendado: 128x128px).
-
-## 📁 Estrutura do Projeto
-
-```
-github-profile-chat/
-├── botData/
-│   ├── avatar.webp          # Avatar do bot
-│   ├── chatbot-config.json  # Configurações
-│   └── systemPrompt.txt     # Prompt do sistema
-├── sdk/
-│   ├── src/
-│   │   ├── controllers/     # Lógica de controle
-│   │   ├── views/          # Interface do usuário
-│   │   ├── services/       # Serviços de IA
-│   │   └── index.js        # Inicializador
-│   ├── ew-chatbot.css      # Estilos
-│   └── ew-chatbot.html     # Template HTML
-├── index.html              # Página de exemplo
-└── package.json
-```
-
-## 🔧 Tecnologias
-
-- **Chrome Prompt API** - IA local do navegador
-- **Vanilla JavaScript** - Sem frameworks pesados
-- **CSS Custom Properties** - Temas personalizáveis
-- **ES6 Modules** - Arquitetura modular
-
-## ⚠️ Limitações
-
-- Funciona apenas no Google Chrome
-- Requer flags experimentais ativadas
-- Depende do hardware local para processamento de IA
-- Projeto educacional - não recomendado para produção sem revisões
-
-## 🔒 Segurança e Considerações
-
-### **Riscos Potenciais:**
-- **APIs Experimentais**: Chrome Prompt API ainda é experimental, pode ter bugs ou ser alterada/removida pelo Google
-- **Processamento Local**: IA roda no navegador, dados não saem do dispositivo (mais seguro), mas depende do hardware local
-- **Código Público**: Todo código está visível no GitHub, incluindo a lógica do chatbot e prompt do sistema
-
-### **Mitigações Implementadas:**
-- ✅ Sem dados sensíveis ou credenciais no código
-- ✅ Não conecta com APIs externas - tudo roda offline
-- ✅ Validações de segurança (verifica Chrome, APIs disponíveis, controle de abort)
-- ✅ Escopo limitado - chatbot só responde sobre o perfil, não acessa dados do sistema
-
-### **Recomendações Adicionais:**
-
-#### **1. Monitore o Projeto:**
-- Acompanhe atualizações do Chrome e mudanças nas APIs experimentais
-- Teste regularmente o funcionamento
-- Verifique logs de erro no console do navegador
-
-#### **2. Para Uso em Produção:**
-- Adicione mais validações de entrada do usuário
-- Implemente rate limiting para evitar spam
-- Considere migrar para APIs estáveis quando disponíveis
-- Adicione monitoramento de erros
-
-#### **3. Transparência:**
-- Sempre informe aos usuários que é um projeto experimental
-- Documente claramente as limitações
-- Mantenha o código público para auditoria
-- Informe sobre o processamento local dos dados
-
-## 📝 Licença
-
-MIT License - veja o arquivo LICENSE para detalhes.
-
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para:
-
-1. Fazer um fork do projeto
-2. Criar uma branch para sua feature
-3. Fazer commit das mudanças
-4. Abrir um Pull Request
+**Análise e Desenvolvimento de Sistemas**  
+*UniSantaCruz* - Em andamento
 
 ---
 
-Feito com 💜 por LukG
+### 🔒 Nota sobre o Código
+
+*Este é um projeto pessoal com componentes proprietários. O código do chatbot e configurações sensíveis não estão disponíveis publicamente por questões de segurança e propriedade intelectual.*
+
+---
+
+**Desenvolvido com ❤️ e café ☕ por Lukas Gomes**
