@@ -1,7 +1,7 @@
 # 🤖 Profile Chat - ChatBot AI Pessoal
 
 <div align="center">
-    <img src="./botData/avatar.webp" alt="ChatBot Avatar" width="120" height="120" style="border-radius: 50%;">
+    <img src="./botData/logo2.png" alt="ChatBot Avatar" width="120" height="120" style="border-radius: 50%;">
     
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?style=for-the-badge&logo=github)](https://lukasdevjobs1.github.io/profile-chat/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deploy-black?style=for-the-badge&logo=vercel)](https://profile-chat-lukasdevjobs1.vercel.app/)
