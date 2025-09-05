@@ -1,6 +1,5 @@
 # Dados sensíveis
 botData/api-config.json
-botData/systemPrompt.txt
 .env
 *.key
 
