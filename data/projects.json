@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "name": "profile-chat",
+      "description": "Portfolio moderno com ChatBot AI integrado",
+      "technologies": ["JavaScript", "HTML", "CSS", "AI", "Modern Design"],
+      "url": "https://github.com/lukasdevjobs1/profile-chat",
+      "live_url": "https://lukasdevjobs1.github.io/profile-chat/",
+      "status": "Ativo"
+    },
+    {
+      "name": "Git_Projects",
+      "description": "Portfólio para demonstrar habilidades técnicas",
+      "technologies": ["Python", "HTML", "CSS", "JavaScript"],
+      "url": "https://github.com/lukasdevjobs1/Git_Projects",
+      "status": "Ativo"
+    },
+    {
+      "name": "lukasdevjobs1",
+      "description": "Site pessoal com chatbot AI integrado - GitHub Pages",
+      "technologies": ["JavaScript", "HTML", "CSS", "AI Integration"],
+      "url": "https://github.com/lukasdevjobs1/lukasdevjobs1",
+      "live_url": "https://lukasdevjobs1.github.io/lukasdevjobs1/",
+      "status": "Ativo"
+    }
+  ],
+  "technologies": {
+    "frontend": {
+      "HTML": {"level": "Avançado"},
+      "CSS": {"level": "Avançado"},
+      "JavaScript": {"level": "Avançado"},
+      "React": {"level": "Intermediário"}
+    },
+    "backend": {
+      "Python": {"level": "Intermediário/Avançado"}
+    },
+    "ai_chatbots": {
+      "Chatbot_Development": {"level": "Avançado"},
+      "AI_Integration": {"level": "Intermediário"}
+    },
+    "cloud": {
+      "GitHub_Pages": {"level": "Avançado"},
+      "Vercel": {"level": "Intermediário"}
+    }
+  },
+  "stats": {
+    "totalRepositories": 13,
+    "originalProjects": 5,
+    "totalStars": 11,
+    "githubPagesProjects": 2
+  }
+}
