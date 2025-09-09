@@ -7,7 +7,8 @@
       "url": "https://github.com/lukasdevjobs1/Git_Projects",
       "highlights": ["Projeto em destaque no README", "Licença MIT"],
       "stars": 1,
-      "status": "Ativo"
+      "status": "Ativo",
+      "details": "Repositório de portfólio técnico com projetos diversos. Para detalhes específicos dos projetos internos, é necessário consultar o repositório diretamente."
     },
     {
       "name": "profile-chat",
