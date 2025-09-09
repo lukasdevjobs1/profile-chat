@@ -31,17 +31,20 @@ Criar uma experiência única para recrutadores, colegas desenvolvedores e curio
 ## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
+
 - **HTML5** - Estrutura semântica moderna
 - **CSS3** - Animações, gradientes e responsividade
 - **JavaScript ES6+** - Lógica do chatbot e integração com API
 - **Fetch API** - Comunicação com serviços externos
 
 ### Backend/API
+
 - **Vercel Functions** - Serverless API proxy
 - **Groq API** - Modelo de linguagem Llama 3.1-8b-instant
 - **GitHub API** - Integração com repositórios (futuro)
 
 ### Arquitetura
+
 - **SDK Modular** - Arquitetura MVC organizada
 - **Services Layer** - Separação de responsabilidades
 - **Configuration Management** - Configurações centralizadas
@@ -74,32 +77,37 @@ profile-chat/
 
 ## 🚀 Como Usar
 
-###  Acesso Direto
+### Acesso Direto
+
 - **GitHub Pages**: [lukasdevjobs1.github.io/profile-chat](https://lukasdevjobs1.github.io/profile-chat/)
 - **Vercel**: [profile-chat-lukasdevjobs1.vercel.app](https://profile-chat-lukasdevjobs1.vercel.app/)
 
 ## 💬 Exemplos de Conversas
 
 ### Perguntas sobre Projetos
-- *"Quais são seus principais projetos?"*
-- *"Me fale sobre o Git_Projects"*
-- *"Você tem experiência com Python?"*
+
+- _"Quais são seus principais projetos?"_
+- _"Me fale sobre o Git_Projects"_
+- _"Você tem experiência com Python?"_
 
 ### Perguntas Técnicas
-- *"Quais tecnologias você domina?"*
-- *"Você trabalha com AWS?"*
-- *"Tem experiência com chatbots?"*
+
+- _"Quais tecnologias você domina?"_
+- _"Você trabalha com AWS?"_
+- _"Tem experiência com chatbots?"_
 
 ### Perguntas Profissionais
-- *"Qual sua formação?"*
-- *"Como posso entrar em contato?"*
-- *"Você está disponível para projetos?"*
+
+- _"Qual sua formação?"_
+- _"Como posso entrar em contato?"_
+- _"Você está disponível para projetos?"_
 
 ## 📊 Portfólio Integrado
 
 O chatbot conhece detalhadamente:
 
 ### 🏆 Projetos Originais (5)
+
 - **Git_Projects** - Portfólio técnico principal
 - **profile-chat** - Este chatbot AI
 - **Exercicios_praticos_InfinitySchool** - Exercícios Python
@@ -107,6 +115,7 @@ O chatbot conhece detalhadamente:
 - **lukasdevjobs1** - Site pessoal
 
 ### 🔄 Projetos Forked (8)
+
 - **semana-javascript-expert09** - Chatbot offline
 - **grokking_algorithms** - Algoritmos e estruturas
 - **developer-roadmap** - Roadmaps de carreira
@@ -116,7 +125,8 @@ O chatbot conhece detalhadamente:
 - **Agents-Prompts** - Prompts para IA
 
 ### 🛠️ Stack Tecnológico
-- **Frontend**: HTML5, CSS3, JavaScript, Vue.js
+
+- **Frontend**: HTML5, CSS3, JavaScript
 - **Backend**: Python, Node.js
 - **AI/Chatbots**: Groq API, Prompt Engineering
 - **Cloud**: AWS, GitHub Pages, Vercel
@@ -127,6 +137,7 @@ O chatbot conhece detalhadamente:
 Contribuições são bem-vindas! Este projeto serve como template para outros desenvolvedores criarem seus próprios chatbots de portfólio.
 
 ### Como Contribuir
+
 1. Fork o projeto
 2. Crie uma branch para sua feature
 3. Commit suas mudanças
@@ -140,6 +151,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 📞 Contato
 
 **Lukas Albertino Gomes**
+
 - 📧 Email: [luk.devjobs@gmail.com](mailto:luk.devjobs@gmail.com)
 - 💼 LinkedIn: [lukas-gomes-4470a2269](https://www.linkedin.com/in/lukas-gomes-4470a2269/)
 - 🐙 GitHub: [@lukasdevjobs1](https://github.com/lukasdevjobs1)
