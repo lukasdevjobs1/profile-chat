@@ -12,7 +12,7 @@
 export default async function handler(req, res) {
   // Configuração de CORS para permitir acesso do GitHub Pages e Vercel
   const origin = req.headers.origin;
-  if (origin && (origin.includes('lukasdevjobs1.github.io') || origin.includes('lukasdevjobs1') && origin.includes('vercel.app'))) {
+  if (origin && (origin.includes('SEU_PAGES_AQUI') || origin.includes('SEU_PERFIL') && origin.includes('vercel.app'))) {
     res.setHeader('Access-Control-Allow-Origin', origin);
   }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -29,11 +29,11 @@ export default async function handler(req, res) {
   }
 
   // Obtém a chave da API do Groq das variáveis de ambiente
-  const GROQ_API_KEY = process.env.GROQ_API_KEY;
+  const API_KEY = process.env.API_KEY;
   
   // Logs de debug para troubleshooting
   console.log('Environment variables:', Object.keys(process.env));
-  console.log('GROQ_API_KEY exists:', !!GROQ_API_KEY);
+  console.log('API_KEY exists:', !!API_KEY);
   
   // Verifica se a API key está configurada
   if (!GROQ_API_KEY) {
@@ -41,17 +41,17 @@ export default async function handler(req, res) {
       error: 'API key not configured',
       debug: {
         envKeys: Object.keys(process.env).filter(k => k.includes('GROQ')),
-        hasGroqKey: !!process.env.GROQ_API_KEY
+        hasAPIKey: !!process.env.API_KEY
       }
     });
   }
 
   try {
     // Faz proxy da requisição para a API do Groq
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch('API_REQUESTS', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${GROQ_API_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(req.body)
