@@ -125,12 +125,7 @@
           "semana-javascript-expert09"
         ],
         "description": "Chatbots AI, integração com APIs, desenvolvimento frontend"
-      },
-      "Vue.js": {
-        "level": "Básico",
-        "projects": ["projeto-vue-exemplo"],
-        "description": "Framework progressivo, composition API"
-      }
+   
     },
     "backend": {
       "Python": {
