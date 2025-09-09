@@ -36,3 +36,13 @@ Thumbs.db
 *.tmp
 *.temp
 repos.json
+
+# Vercel
+.vercel
+
+# GitHub
+.github/
+
+# Backup
+*.bak
+*.backup

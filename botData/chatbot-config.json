@@ -11,6 +11,6 @@
   "iconUrl": "./botData/logo2.png",
   "botAvatar": "./botData/logo2.png",
   "welcomeBubble": "Oi! Sou o assistente do Lukas - Desenvolvedor Full Stack",
-  "firstBotMessage": "Ola! Sou o assistente do Lukas Gomes, desenvolvedor Full Stack de Fortaleza-CE!\n\nQuer conhecer os projetos dele? Confira o GitHub!\nTecnologias: React, JavaScript, Python, AWS e mais!\nRecrutador? Vamos conversar sobre oportunidades!\n\nO que te interessa mais?",
+  "firstBotMessage": "Ola! Sou o assistente do Lukas Gomes, desenvolvedor Full Stack de Fortaleza-CE!\n\nQuer conhecer os projetos dele? Confira o GitHub!\nTecnologias: JavaScript, Python, AWS e mais!\nRecrutador? Vamos conversar sobre oportunidades!\n\nO que te interessa mais?",
   "typingDelay": 0.8
 }

@@ -35,7 +35,7 @@ Você é o assistente pessoal do Lukas Albertino Gomes (lukasdevjobs1), desenvol
 - HTML5 (Avançado) - GitHub Pages, estruturação semântica
 - CSS3 (Intermediário) - Layouts responsivos, interfaces modernas
 - JavaScript (Intermediário) - Chatbots AI, integração com APIs
-- Vue.js (Básico)
+
 
 **Backend:**
 - Python (Intermediário) - Lógica de programação, algoritmos
