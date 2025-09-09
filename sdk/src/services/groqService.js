@@ -108,11 +108,18 @@ export class GroqService {
     let enhancedSystemPrompt = this.systemPrompt;
     
     if (projectName) {
-      console.log(`Buscando dados reais do projeto: ${projectName}`);
-      const projectDetails = await this.githubService.getRepositoryDetails(projectName);
-      if (projectDetails) {
-        const projectInfo = this.githubService.formatProjectInfo(projectDetails);
-        enhancedSystemPrompt += `\n\n### DADOS REAIS DO PROJETO ${projectName.toUpperCase()}:\n${projectInfo}`;
+      console.log(`🔍 Buscando dados reais do projeto: ${projectName}`);
+      try {
+        const projectDetails = await this.githubService.getRepositoryDetails(projectName);
+        if (projectDetails) {
+          const projectInfo = this.githubService.formatProjectInfo(projectDetails);
+          enhancedSystemPrompt += `\n\n### 📊 DADOS REAIS DO REPOSITÓRIO ${projectName.toUpperCase()} (GitHub API):\n${projectInfo}`;
+          console.log(`✅ Dados do ${projectName} carregados com sucesso`);
+        } else {
+          console.log(`⚠️ Repositório ${projectName} não encontrado`);
+        }
+      } catch (error) {
+        console.error(`❌ Erro ao buscar ${projectName}:`, error);
       }
     }
 
@@ -202,13 +209,18 @@ export class GroqService {
       return 'Olá! Sou o assistente do Lukas, desenvolvedor junior em evolução de Fortaleza-CE! Posso falar sobre seus 13 repositórios, projetos com IA e tecnologias. O que você quer saber?';
     }
     
+    // Detecta perguntas sobre projetos específicos
+    if (textLower.includes('git_projects') || textLower.includes('git-projects')) {
+      return 'O Git_Projects é um repositório de aprendizado onde o Lukas está desenvolvendo algoritmos, interfaces gráficas e integrações. Inclui implementação de Fibonacci, GUI com Python e integração com GitHub API. Quer que eu busque os detalhes reais do repositório?';
+    }
+    
     // Detecta perguntas sobre chatbots
     if (textLower.includes('chatbot') || textLower.includes('bot')) {
-      return 'O Lukas tem 2 chatbots: este que você está usando (lukasdevjobs1) com sistema híbrido Chrome AI + Groq, e o semana-javascript-expert09 do desafio do Erick Wendel. Também tem o projeto bia com AWS + Amazon Q. Quer saber mais sobre algum?';
+      return 'O Lukas tem 2 chatbots: este que você está usando (profile-chat) com sistema híbrido Chrome AI + Groq, e o semana-javascript-expert09 do desafio do Erick Wendel. Quer saber mais sobre algum?';
     }
     
     // Resposta padrão genérica
-    return 'Sou o assistente do Lukas Gomes! Posso falar sobre seus projetos, tecnologias (JavaScript, Python) e jornada como desenvolvedor junior. O que você quer saber?';
+    return 'Sou o assistente do Lukas Gomes! Posso falar sobre seus projetos, tecnologias (JavaScript, Python) e jornada como desenvolvedor. Mencione um projeto específico e eu busco os dados reais do GitHub! O que você quer saber?';
   }
 
   /**
@@ -239,21 +251,26 @@ export class GroqService {
     // Busca menções diretas de projetos
     for (const project of projects) {
       if (textLower.includes(project)) {
+        console.log(`Projeto detectado: ${project}`);
         return this.normalizeProjectName(project);
       }
     }
     
-    // Busca padrões contextuais ("projeto X", "sobre o X")
+    // Busca padrões mais amplos para capturar perguntas sobre repositórios
     const patterns = [
-      /(?:projeto|reposit[oó]rio|sobre o?|detalhes do?)\s+(\w+)/g,
-      /\b(bia|lukasdevjobs1|git[_-]?projects)\b/g
+      /git[_-]?projects?/i,
+      /reposit[oó]rio.*git/i,
+      /to\s*do\s*list/i,
+      /encurtador.*url/i,
+      /fibonacci/i,
+      /interface.*gráfica/i,
+      /github.*api/i
     ];
     
     for (const pattern of patterns) {
-      const matches = textLower.match(pattern);
-      if (matches) {
-        const projectName = matches[0].replace(/^(projeto|reposit[oó]rio|sobre o?|detalhes do?)\s+/, '');
-        return this.normalizeProjectName(projectName);
+      if (pattern.test(textLower)) {
+        console.log(`Padrão detectado para Git_Projects: ${pattern}`);
+        return 'Git_Projects';
       }
     }
     
