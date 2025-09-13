@@ -82,9 +82,9 @@ export class GroqService {
     const isVercel = window.location.hostname.includes("vercel.app");
     const isProduction = isGitHubPages || isVercel;
 
-    // Usa o próprio domínio para evitar CORS
+    // GitHub Pages não suporta APIs, usa Vercel
     const apiUrl = isProduction
-      ? `${window.location.origin}/api/chat` // Mesmo domínio (sem CORS)
+      ? 'https://profile-chat-lukasdevjobs1.vercel.app/api/chat' // Vercel API
       : this.config.groq.baseUrl; // API direta (desenvolvimento)
 
     let ambiente = "Local";
