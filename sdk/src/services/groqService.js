@@ -48,24 +48,9 @@ export class GroqService {
       },
     };
 
-    // Detecta ambiente primeiro
-    const isGitHubPages = typeof window !== 'undefined' && window.location.hostname === 'lukasdevjobs1.github.io';
-    const isVercel = typeof window !== 'undefined' && window.location.hostname.includes('vercel.app');
-    const isProduction = isGitHubPages || isVercel;
-    
-    // Só tenta carregar configuração local se não estiver em produção
-    if (!isProduction) {
-      try {
-        const response = await fetch("./botData/api-config.json?t=" + Date.now());
-        if (response.ok) {
-          const fileConfig = await response.json();
-          this.config = fileConfig;
-          console.log("Configuração carregada do arquivo:", fileConfig);
-        }
-      } catch (error) {
-        console.log("Configuração local não encontrada (normal em produção)");
-      }
-    }
+    // Não tenta mais carregar arquivo de configuração
+    // Usa apenas configuração padrão
+    console.log('Usando configuração padrão (sem arquivo)');
 
     return true;
   }
