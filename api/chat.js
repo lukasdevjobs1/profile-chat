@@ -10,13 +10,23 @@
  * @returns {Promise<void>} Resposta JSON com dados do chat ou erro
  */
 export default async function handler(req, res) {
-  // Configuração de CORS para permitir acesso do GitHub Pages e Vercel
+  // Configuração de CORS mais permissiva
   const origin = req.headers.origin;
-  if (origin && (origin.includes('lukasdevjobs1.github.io') || origin.includes('lukasdevjobs1') && origin.includes('vercel.app'))) {
+  const allowedOrigins = [
+    'https://lukasdevjobs1.github.io',
+    'https://profile-chat.vercel.app',
+    'https://profile-chat-lukasdevjobs1.vercel.app'
+  ];
+  
+  if (origin && (allowedOrigins.includes(origin) || origin.includes('vercel.app'))) {
     res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Fallback temporário
   }
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Max-Age', '86400');
 
   // Responde a requisições OPTIONS (preflight CORS)
   if (req.method === 'OPTIONS') {
