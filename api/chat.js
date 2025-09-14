@@ -1,13 +1,11 @@
 export default async function handler(req, res) {
-  // CORS mais permissivo
+  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-  res.setHeader('Access-Control-Max-Age', '86400');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-  // Handle preflight
   if (req.method === 'OPTIONS') {
-    return res.status(200).json({ message: 'OK' });
+    return res.status(200).json({ message: 'CORS OK' });
   }
 
   // Debug endpoint
@@ -15,7 +13,8 @@ export default async function handler(req, res) {
     return res.status(200).json({ 
       message: 'Chat API is running',
       timestamp: new Date().toISOString(),
-      hasApiKey: !!process.env.GROQ_API_KEY
+      hasApiKey: !!process.env.GROQ_API_KEY,
+      envVars: Object.keys(process.env).filter(k => k.includes('GROQ'))
     });
   }
 
@@ -28,7 +27,7 @@ export default async function handler(req, res) {
   if (!GROQ_API_KEY) {
     return res.status(500).json({ 
       error: 'API key not configured',
-      env: Object.keys(process.env).filter(k => k.includes('GROQ'))
+      debug: 'GROQ_API_KEY environment variable is missing'
     });
   }
 
@@ -43,7 +42,8 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      throw new Error(`Groq API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      throw new Error(`Groq API error: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();
