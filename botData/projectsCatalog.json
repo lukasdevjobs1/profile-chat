@@ -22,13 +22,74 @@
     },
     {
       "name": "Exercicios_praticos_InfinitySchool",
-      "description": "Exercícios práticos da jornada de aprendizado",
-      "technologies": ["Python"],
+      "description": "Repositório completo do curso PYIA | Python IA da Infinity School",
+      "technologies": ["Python", "SQLite", "JSON", "CSV", "CLI"],
       "url": "https://github.com/lukasdevjobs1/Exercicios_praticos_InfinitySchool",
-      "highlights": ["Exercícios educacionais", "1 fork"],
+      "highlights": [
+        "50% concluído (33/66 aulas)",
+        "Sistema de Controle de Gastos CLI",
+        "Sistema de Tarefas Diárias",
+        "9 problemas HackerRank resolvidos",
+        "5 desafios práticos",
+        "Algoritmos de busca binária"
+      ],
       "stars": 1,
       "forks": 1,
-      "status": "Ativo"
+      "status": "Ativo",
+      "details": {
+        "course_progress": "50% (33/66 aulas)",
+        "modules": {
+          "estruturas_dados": "100% completo",
+          "funcoes": "100% completo",
+          "interface_grafica": "25% iniciado (2/8 aulas)",
+          "banco_dados": "8% iniciado"
+        },
+        "projects": [
+          {
+            "name": "Sistema de Controle de Gastos CLI",
+            "description": "Aplicação completa para gerenciar despesas e receitas",
+            "features": ["Persistência CSV", "Interface CLI interativa", "Relatórios"]
+          },
+          {
+            "name": "Sistema de Tarefas Diárias",
+            "description": "Gerenciador de tarefas com prioridades e categorias",
+            "features": ["Persistência JSON", "Prioridades", "Categorias", "Sets"]
+          },
+          {
+            "name": "Sistema de Agenda",
+            "description": "Gerenciamento completo de contatos",
+            "features": ["CRUD completo", "Busca de contatos"]
+          },
+          {
+            "name": "Gerenciamento de Funcionários",
+            "description": "Sistema CRUD para funcionários",
+            "features": ["Operações CRUD", "Validações"]
+          },
+          {
+            "name": "Sistema de Produtos",
+            "description": "Gerenciamento com banco SQLite",
+            "features": ["Banco SQLite", "Operações CRUD"]
+          },
+          {
+            "name": "Jogo de Adivinhação",
+            "description": "Lógica de jogos e algoritmos",
+            "features": ["Lógica de jogos", "Validações"]
+          }
+        ],
+        "hackerrank_solutions": [
+          "Operações aritméticas",
+          "Diferença diagonal de matrizes",
+          "Manipulação de strings",
+          "Algoritmos de busca",
+          "Problemas matemáticos",
+          "Estruturas condicionais"
+        ],
+        "algorithms": [
+          "Busca binária",
+          "Otimização de algoritmos",
+          "Estruturas de dados"
+        ]
+      }
     },
     {
       "name": "bia",
@@ -130,13 +191,27 @@
     },
     "backend": {
       "Python": {
-        "level": "básico/intermediário",
+        "level": "Intermediário",
         "projects": [
           "Git_Projects",
           "Exercicios_praticos_InfinitySchool",
           "Desafios_Infinity_School"
         ],
-        "description": "Lógica de programação, algoritmos, automação"
+        "description": "Sistemas CLI completos, CRUD, banco de dados SQLite, algoritmos de busca, estruturas de dados, HackerRank",
+        "specialties": [
+          "Sistemas CLI interativos",
+          "Manipulação de arquivos (CSV, JSON)",
+          "Banco de dados SQLite",
+          "Algoritmos de busca binária",
+          "Estruturas de dados (listas, dicionários, sets)",
+          "Resolução de problemas HackerRank",
+          "Lógica de programação avançada"
+        ]
+      },
+      "SQLite": {
+        "level": "Básico/Intermediário",
+        "projects": ["Exercicios_praticos_InfinitySchool"],
+        "description": "Banco de dados para sistema de produtos, operações CRUD"
       }
     },
     "ai_chatbots": {
@@ -215,9 +290,13 @@
     "mainLanguages": ["JavaScript", "Python", "HTML", "CSS"],
     "specialties": [
       "Desenvolvimento de Chatbots AI",
+      "Sistemas CLI Python Completos",
+      "Banco de Dados SQLite",
+      "Algoritmos e Estruturas de Dados",
+      "Resolução de Problemas HackerRank",
       "GitHub Pages e Deploy",
       "Desenvolvimento Full Stack",
-      "Lógica de Programação Python",
+      "Lógica de Programação Avançada",
       "Interfaces Responsivas",
       "Integração com IA"
     ],
@@ -225,10 +304,16 @@
       "lukasdevjobs1 (Site pessoal + Chatbot)",
       "Git_Projects (Portfólio)",
       "profile-chat (ChatBot AI)",
-      "Exercicios_praticos_InfinitySchool (Python)"
+      "Exercicios_praticos_InfinitySchool (Curso Python IA - 36% concluído)",
+      "Sistema de Controle de Gastos CLI (Projeto Final)",
+      "Sistema de Tarefas Diárias (Projeto Funções)"
     ],
     "learningFocus": [
-      "Algoritmos (grokking_algorithms)",
+      "Python IA - Infinity School (36% concluído)",
+      "Estruturas de Dados e Algoritmos",
+      "Banco de Dados SQLite",
+      "Sistemas CLI Avançados",
+      "HackerRank Problem Solving",
       "JavaScript Expert (semana-javascript-expert09)",
       "AWS e Cloud (mcp)",
       "Roadmaps de Carreira (developer-roadmap)"
@@ -238,7 +323,10 @@
     "github": "https://github.com/lukasdevjobs1",
     "email": "luk.devjobs@gmail.com",
     "linkedin": "https://www.linkedin.com/in/lukas-gomes-4470a2269/",
+    "twitter": "https://x.com/LukDev13",
+    "whatsapp": "https://wa.me/5585992570216",
     "location": "Fortaleza-CE",
-    "education": "Análise e Desenvolvimento de Sistemas - UniSantaCruz"
+    "education": "Análise e Desenvolvimento de Sistemas - UniSantaCruz",
+    "current_course": "PYIA | Python IA - Infinity School (36% concluído)"
   }
 }

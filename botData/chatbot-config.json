@@ -10,7 +10,7 @@
   "botText": "#f0f6fc",
   "iconUrl": "./botData/logo2.png",
   "botAvatar": "./botData/logo2.png",
-  "welcomeBubble": "Oi! Sou o assistente do Lukas - Desenvolvedor Full Stack",
-  "firstBotMessage": "Ola! Sou o assistente do Lukas Gomes, desenvolvedor Full Stack de Fortaleza-CE!\n\nQuer conhecer os projetos dele? Confira o GitHub!\nTecnologias: JavaScript, Python, AWS e mais!\nRecrutador? Vamos conversar sobre oportunidades!\n\nO que te interessa mais?",
+  "welcomeBubble": "Oi! Sou o assistente do Lukas - Desenvolvedor Full Stack | Python IA Student",
+  "firstBotMessage": "Olá! Sou o assistente IA do Lukas para responder suas perguntas!\n\n🚀 **Novidades:**\n• 6 sistemas Python completos desenvolvidos\n• Sistema de Controle de Gastos CLI (Projeto Final)\n• 9 problemas HackerRank resolvidos\n• Curso Python IA: 50% concluído\n\n💼 **Quer saber sobre:**\n• Meus projetos e tecnologias?\n• Sistemas CLI, módulos e Interface Gráfica?\n• Chatbots AI e desenvolvimento web?\n• Oportunidades profissionais?\n\nO que te interessa mais?",
   "typingDelay": 0.8
 }
