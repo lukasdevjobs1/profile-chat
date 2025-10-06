@@ -11,6 +11,6 @@
   "iconUrl": "./botData/logo2.png",
   "botAvatar": "./botData/logo2.png",
   "welcomeBubble": "Oi! Sou o assistente do Lukas - Desenvolvedor Full Stack | Python IA Student",
-  "firstBotMessage": "Olá! Sou o assistente IA do Lukas para responder suas perguntas!\n\n🚀,
+  "firstBotMessage": "Olá! Sou o assistente IA do Lukas para responder suas perguntas!\n\n🚀 Pergunte sobre projetos, tecnologias ou carreira!",
   "typingDelay": 0.8
 }
