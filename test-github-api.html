@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualizar Repositórios GitHub</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { padding: 10px 20px; background: #0969da; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        #result { margin-top: 20px; padding: 15px; background: #f6f8fa; border-radius: 5px; white-space: pre-wrap; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>🔄 Atualizar Repositórios do GitHub</h1>
+    <button onclick="updateRepos()">Buscar Repositórios</button>
+    <div id="result"></div>
+
+    <script>
+        async function updateRepos() {
+            const result = document.getElementById('result');
+            result.textContent = '🔍 Buscando repositórios...';
+            
+            try {
+                const response = await fetch('https://api.github.com/users/lukasdevjobs1/repos?per_page=100');
+                const repos = await response.json();
+                
+                console.log('Repositórios encontrados:', repos);
+                
+                const repoData = repos.map(repo => ({
+                    name: repo.name,
+                    description: repo.description || 'Sem descrição',
+                    language: repo.language || 'N/A',
+                    stars: repo.stargazers_count,
+                    forks: repo.forks_count,
+                    url: repo.html_url,
+                    fork: repo.fork,
+                    created: new Date(repo.created_at).getFullYear(),
+                    updated: new Date(repo.updated_at).toLocaleDateString('pt-BR')
+                }));
+                
+                const originals = repoData.filter(repo => !repo.fork);
+                const forks = repoData.filter(repo => repo.fork);
+                
+                let context = `## PORTFÓLIO COMPLETO (${repos.length} repositórios):
+
+### PROJETOS ORIGINAIS (${originals.length}):
+`;
+                
+                originals.forEach((repo, index) => {
+                    const stars = repo.stars > 0 ? ` - ${repo.stars} star${repo.stars > 1 ? 's' : ''} ⭐` : '';
+                    const forksText = repo.forks > 0 ? ` ${repo.forks} fork${repo.forks > 1 ? 's' : ''} 🍴` : '';
+                    context += `${index + 1}. **${repo.name}** (${repo.language})${stars}${forksText}
+   - ${repo.description}
+   - Criado: ${repo.created}
+   - URL: ${repo.url}
+
+`;
+                });
+                
+                if (forks.length > 0) {
+                    context += `### PROJETOS ESTUDADOS (${forks.length} Forks):
+`;
+                    forks.forEach(repo => {
+                        context += `- **${repo.name}** (${repo.language}) - ${repo.description}
+`;
+                    });
+                }
+                
+                const languages = [...new Set(repos.map(r => r.language).filter(l => l))];
+                context += `
+## TECNOLOGIAS UTILIZADAS:
+${languages.map(lang => `- ${lang}`).join('\n')}
+
+## ESTATÍSTICAS:
+- Total de repositórios: ${repos.length}
+- Projetos originais: ${originals.length}
+- Projetos estudados (forks): ${forks.length}
+- Total de stars: ${originals.reduce((sum, repo) => sum + repo.stars, 0)}
+- Linguagens diferentes: ${languages.length}
+`;
+                
+                result.textContent = `✅ Encontrados ${repos.length} repositórios!\n\n${context}`;
+                
+            } catch (error) {
+                result.textContent = `❌ Erro: ${error.message}`;
+                console.error('Erro:', error);
+            }
+        }
+    </script>
+</body>
+</html>

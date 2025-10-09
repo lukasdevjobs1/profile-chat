@@ -168,25 +168,29 @@
   ],
   "technologies": {
     "frontend": {
-      "HTML": {
+      "HTML5": {
         "level": "Avançado",
-        "projects": ["lukasdevjobs1", "Git_Projects", "profile-chat"],
-        "description": "Estruturação semântica, GitHub Pages"
+        "projects": ["Git_Projects", "profile-chat", "lukasdevjobs1"],
+        "frameworks": ["Semântico", "GitHub Pages"],
+        "description": "Estruturação semântica moderna, SEO, acessibilidade"
       },
-      "CSS": {
-        "level": "básico/intermediário",
-        "projects": ["lukasdevjobs1", "Git_Projects", "profile-chat"],
-        "description": "Layouts responsivos, interfaces modernas"
+      "CSS3": {
+        "level": "Intermediário",
+        "projects": ["Git_Projects", "profile-chat", "lukasdevjobs1"],
+        "frameworks": ["Flexbox", "Grid", "Responsive Design"],
+        "description": "Layouts responsivos, animações, interfaces modernas"
       },
       "JavaScript": {
-        "level": "básico/intermediário",
-        "projects": [
-          "lukasdevjobs1",
-          "bia",
-          "profile-chat",
-          "semana-javascript-expert09"
-        ],
-        "description": "Chatbots AI, integração com APIs, desenvolvimento frontend"
+        "level": "Intermediário",
+        "projects": ["profile-chat", "bia", "semana-javascript-expert09"],
+        "frameworks": ["ES6+", "Fetch API", "DOM Manipulation"],
+        "description": "Chatbots AI, integração com APIs, programação assíncrona"
+      },
+      "TypeScript": {
+        "level": "Básico",
+        "projects": ["BarberShop"],
+        "frameworks": ["Type Safety", "Modern JS"],
+        "description": "Tipagem estática, desenvolvimento mais seguro"
       }
     },
     "backend": {
@@ -195,80 +199,93 @@
         "projects": [
           "Git_Projects",
           "Exercicios_praticos_InfinitySchool",
-          "Desafios_Infinity_School"
+          "Desafios_Infinity_School",
+          "DataBase_Project"
         ],
-        "description": "Sistemas CLI completos, CRUD, banco de dados SQLite, algoritmos de busca, estruturas de dados, HackerRank",
+        "frameworks": ["CLI Applications", "File Handling", "Data Structures"],
+        "libraries": ["sqlite3", "json", "csv", "os", "datetime"],
+        "description": "Sistemas CLI completos, CRUD, algoritmos, estruturas de dados",
         "specialties": [
           "Sistemas CLI interativos",
           "Manipulação de arquivos (CSV, JSON)",
-          "Banco de dados SQLite",
           "Algoritmos de busca binária",
-          "Estruturas de dados (listas, dicionários, sets)",
+          "Estruturas de dados avançadas",
           "Resolução de problemas HackerRank",
-          "Lógica de programação avançada"
+          "Lógica de programação complexa",
+          "Projetos em equipe"
         ]
       },
       "SQLite": {
-        "level": "Básico/Intermediário",
-        "projects": ["Exercicios_praticos_InfinitySchool"],
-        "description": "Banco de dados para sistema de produtos, operações CRUD"
+        "level": "Intermediário",
+        "projects": ["Exercicios_praticos_InfinitySchool", "DataBase_Project"],
+        "frameworks": ["Database Design", "CRUD Operations"],
+        "description": "Banco de dados relacional, operações CRUD, projetos em equipe"
       }
     },
     "ai_chatbots": {
       "Chatbot_Development": {
-        "level": "Básico/Intermediário",
-        "projects": [
-          "lukasdevjobs1",
-          "profile-chat",
-          "semana-javascript-expert09"
-        ],
-        "description": "Chatbots AI personalizados, integração com IA"
+        "level": "Intermediário",
+        "projects": ["profile-chat", "semana-javascript-expert09"],
+        "frameworks": ["Groq API", "Chrome AI", "Offline Bots"],
+        "technologies": ["JavaScript", "API Integration", "Streaming"],
+        "description": "Chatbots AI híbridos, integração com múltiplas APIs"
       },
       "AI_Integration": {
-        "level": "Básico/Intermediário",
-        "projects": ["Agents-Prompts", "semana-javascript-expert09"],
-        "description": "Prompts para agentes, chatbots offline"
+        "level": "Intermediário",
+        "projects": ["Agents-Prompts", "agno"],
+        "frameworks": ["Multi-Agent Systems", "Prompt Engineering"],
+        "technologies": ["Memory Systems", "Knowledge Base", "Reasoning"],
+        "description": "Sistemas multi-agente, prompts avançados, frameworks de IA"
       }
     },
-    "cloud": {
+    "cloud_deploy": {
       "AWS": {
-        "level": "Básico/Intermediário",
+        "level": "Intermediário",
         "projects": ["mcp"],
-        "description": "AWS MCP Servers, Model Context Protocol"
+        "frameworks": ["MCP Servers", "Model Context Protocol"],
+        "services": ["Cloud Integration", "Serverless"],
+        "description": "AWS MCP Servers, integração com serviços cloud"
       },
       "GitHub_Pages": {
         "level": "Avançado",
-        "projects": ["lukasdevjobs1", "profile-chat"],
-        "description": "Deploy e hospedagem de sites estáticos"
-      }
-    },
-    "tools": {
-      "Cursor": {
-        "level": "básico/intermediário",
-        "projects": ["Todos os 13 repositórios"],
-        "description": "Desenvolvimento de sites estáticos, Bots AI, APis, Softwares"
+        "projects": ["profile-chat", "lukasdevjobs1"],
+        "frameworks": ["Static Site Hosting", "Custom Domains"],
+        "description": "Deploy automático, hospedagem de sites estáticos"
       },
       "Vercel": {
-        "level": "básico/intermediário",
-        "projects": ["Todos os 13 repositórios"],
-        "description": "Deploy e hospedagem de sites estáticos"
-      },
+        "level": "Intermediário",
+        "projects": ["profile-chat"],
+        "frameworks": ["Serverless Functions", "API Proxy"],
+        "description": "Deploy de APIs, funções serverless, proxy seguro"
+      }
+    },
+    "development_tools": {
       "Git": {
         "level": "Avançado",
-        "projects": ["Todos os 13 repositórios"],
-        "description": "Controle de versão, colaboração, forks"
+        "projects": ["Todos os 15 repositórios"],
+        "frameworks": ["Version Control", "Branching", "Merging"],
+        "description": "Controle de versão avançado, colaboração, workflows"
       },
       "GitHub": {
         "level": "Avançado",
-        "projects": ["Todos os 13 repositórios"],
-        "description": "13 repositórios, GitHub Pages, licenças MIT"
+        "projects": ["Todos os 15 repositórios"],
+        "frameworks": ["GitHub Pages", "Actions", "API Integration"],
+        "description": "15 repositórios, 9 stars, colaboração, licenças MIT"
+      },
+      "Cursor_IDE": {
+        "level": "Intermediário",
+        "projects": ["Todos os 15 repositórios"],
+        "frameworks": ["AI-Powered IDE", "Code Completion"],
+        "description": "IDE com IA, desenvolvimento eficiente, autocomplete inteligente"
       }
     },
-    "algorithms": {
+    "algorithms_structures": {
       "Data_Structures": {
-        "level": "básico/intermediário",
-        "projects": ["grokking_algorithms"],
-        "description": "Estudo de algoritmos e estruturas de dados"
+        "level": "Intermediário",
+        "projects": ["grokking_algorithms", "Exercicios_praticos_InfinitySchool"],
+        "frameworks": ["Lists", "Dictionaries", "Sets", "Binary Search"],
+        "algorithms": ["Search", "Sort", "Graph", "Dynamic Programming"],
+        "description": "Estruturas de dados avançadas, algoritmos de busca e ordenação"
       },
       "Problem_Solving": {
         "level": "Intermediário",
@@ -276,18 +293,20 @@
           "Exercicios_praticos_InfinitySchool",
           "Desafios_Infinity_School"
         ],
-        "description": "Lógica de programação, desafios práticos"
+        "platforms": ["HackerRank", "Infinity School"],
+        "skills": ["Logic", "Mathematics", "Optimization"],
+        "description": "9 problemas HackerRank resolvidos, lógica avançada"
       }
     }
   },
   "stats": {
-    "totalRepositories": 13,
-    "originalProjects": 5,
-    "forkedProjects": 8,
-    "totalStars": 11,
+    "totalRepositories": 15,
+    "originalProjects": 6,
+    "forkedProjects": 9,
+    "totalStars": 9,
     "totalForks": 1,
     "githubPagesProjects": 2,
-    "mainLanguages": ["JavaScript", "Python", "HTML", "CSS"],
+    "mainLanguages": ["TypeScript", "JavaScript", "Python"],
     "specialties": [
       "Desenvolvimento de Chatbots AI",
       "Sistemas CLI Python Completos",

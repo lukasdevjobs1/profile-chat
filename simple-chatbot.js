@@ -173,26 +173,59 @@ async function sendToAPI(message, messagesDiv, config) {
 - GitHub: https://github.com/lukasdevjobs1
 - Contatos: LinkedIn, Gmail (luk.devjobs@gmail.com), WhatsApp, Twitter/X
 
-## PORTFÓLIO COMPLETO (13 repositórios):
+## PORTFÓLIO COMPLETO (15 repositórios):
 
-### PROJETOS ORIGINAIS (4):
-1. **Git_Projects** (Python/HTML/CSS/JavaScript) - 1 star ⭐
-2. **profile-chat** (JavaScript/HTML/CSS/AI) - ChatBot AI
-3. **Exercicios_praticos_InfinitySchool** (Python/SQLite/JSON/CSV/CLI) - 1 star, 1 fork
-4. **bia** (JavaScript) - 1 star
+### PROJETOS ORIGINAIS (6):
+1. **BarberShop** (TypeScript) - 1 star ⭐
+   - Projeto de barbearia
+   - Criado: 2025
+2. **bia** (JavaScript) - 1 star ⭐
+   - Projeto JavaScript
+   - Criado: 2025
+3. **Exercicios_praticos_InfinitySchool** (Python) - 2 stars ⭐ 1 fork 🍴
+   - Todos os exercícios feitos durante jornada de aprendizado
+   - Criado: 2025
+4. **Git_Projects** (Python) - 1 star ⭐
+   - Para mostrar habilidades
+   - Criado: 2025
+5. **lukasdevjobs1** (Profile) - 1 star ⭐
+   - Repositório de perfil
+   - Criado: 2025
+6. **profile-chat** (JavaScript) - 3 stars ⭐
+   - ChatBot AI (este projeto)
+   - Criado: 2025
+
+### PROJETOS ESTUDADOS (9 Forks):
+- **Agents-Prompts** - Prompts para IA
+- **agno** - Framework para sistemas multi-agente
+- **BibliotecaDev** - Biblioteca de livros de programação
+- **DataBase_Project** (Python) - Projeto de banco de dados em equipe
+- **Desafios_Infinity_School** (Python) - Desafios de lógica com Python
+- **developer-roadmap** - Roadmaps interativos para desenvolvedores
+- **grokking_algorithms** - Código do livro Grokking Algorithms
+- **mcp** - AWS MCP Servers
+- **semana-javascript-expert09** - Chatbot 100% offline
 
 ## STACK TECNOLÓGICO:
-- Frontend: HTML5, CSS3, JavaScript
-- Backend: Python, SQLite
-- AI/Chatbots: Desenvolvimento de Chatbots, Integração com IA
-- Cloud: AWS, GitHub Pages, Vercel
-- Tools: Git/GitHub, Cursor IDE
+- **Linguagens**: TypeScript, JavaScript, Python
+- **Frontend**: HTML5, CSS3, JavaScript, TypeScript
+- **Backend**: Python
+- **AI/Chatbots**: Desenvolvimento de Chatbots, Integração com IA
+- **Cloud**: AWS, GitHub Pages, Vercel
+- **Tools**: Git/GitHub, Cursor IDE
+
+## ESTATÍSTICAS ATUALIZADAS:
+- Total de repositórios: 15
+- Projetos originais: 6
+- Projetos estudados (forks): 9
+- Total de stars: 9
+- Linguagens diferentes: 3 (TypeScript, JavaScript, Python)
 
 ## INSTRUÇÕES IMPORTANTES:
 - Responda APENAS sobre informações fornecidas acima
 - NÃO invente detalhes sobre projetos não listados
 - NÃO mencione tecnologias que não estão no stack tecnológico
-- Mantenha foco nos 13 repositórios do GitHub
+- Mantenha foco nos 15 repositórios do GitHub
 - Se perguntado sobre algo fora do contexto, redirecione para os projetos reais
 - Seja preciso e factual baseado apenas nas informações do portfólio
 
