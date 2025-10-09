@@ -39,22 +39,15 @@ export class GroqService {
   async init(systemPrompt) {
     this.systemPrompt = systemPrompt;
 
-    // Tenta carregar configuração do arquivo
-    try {
-      const response = await fetch('./botData/api-config.json');
-      this.config = await response.json();
-      console.log('✅ Configuração carregada do arquivo');
-    } catch (error) {
-      // Fallback para configuração padrão
-      this.config = {
-        groq: {
-          apiKey: "proxy_mode",
-          model: "llama-3.1-8b-instant",
-          baseUrl: "https://api.groq.com/openai/v1/chat/completions",
-        },
-      };
-      console.log('⚠️ Usando configuração padrão (arquivo não encontrado)');
-    }
+    // Configuração padrão (sempre usa proxy em produção)
+    this.config = {
+      groq: {
+        apiKey: "proxy_mode",
+        model: "llama-3.1-8b-instant",
+        baseUrl: "https://api.groq.com/openai/v1/chat/completions",
+      },
+    };
+    console.log('✅ Usando configuração segura (proxy mode)');
 
     return true;
   }
@@ -85,17 +78,14 @@ export class GroqService {
       window.location.hostname === "lukasdevjobs1.github.io";
     const isVercel = window.location.hostname.includes("vercel.app");
     const isProduction = isGitHubPages || isVercel;
-    const hasApiKey = this.config.groq.apiKey && this.config.groq.apiKey !== "proxy_mode";
+    const hasApiKey = false; // Sempre false por segurança
 
-    // Usa API direta se tiver chave, senão usa proxy
-    const apiUrl = hasApiKey && !isGitHubPages
-      ? this.config.groq.baseUrl // API direta com chave
-      : 'https://profile-chat.vercel.app/api/chat'; // Proxy Vercel
+    // Sempre usa proxy por segurança
+    const apiUrl = 'https://profile-chat.vercel.app/api/chat';
 
-    let ambiente = "Local com API Key";
+    let ambiente = "Proxy Seguro";
     if (isGitHubPages) ambiente = "GitHub Pages (Proxy)";
     if (isVercel) ambiente = "Vercel (Proxy)";
-    if (!hasApiKey) ambiente = "Local (Proxy)";
 
     console.log("Ambiente:", ambiente);
     console.log("URL da API:", apiUrl);
@@ -135,13 +125,8 @@ export class GroqService {
       console.log("apiKey:", this.config.groq.apiKey?.substring(0, 10) + '...');
       console.log("URL que será usada:", apiUrl);
 
-      // Adiciona Authorization se tiver API key e não for GitHub Pages
-      if (hasApiKey && !isGitHubPages) {
-        headers["Authorization"] = `Bearer ${this.config.groq.apiKey}`;
-        console.log("Usando API key local");
-      } else {
-        console.log("Usando servidor proxy (sem API key)");
-      }
+      // Sempre usa proxy por segurança
+      console.log("Usando servidor proxy (seguro)");
 
       const response = await fetch(apiUrl, {
         method: "POST",
