@@ -101,17 +101,8 @@ console.log('🚀 Carregando chatbot simplificado...');
                 // Limpa input
                 input.value = '';
 
-                // Adiciona resposta automática simples
-                setTimeout(() => {
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'ewcb-message ewcb-message-bot';
-                    botMsg.innerHTML = `
-                        <img src="${config.botAvatar}" class="ewcb-avatar" alt="Bot Avatar" />
-                        <div class="ewcb-message-content">Obrigado pela mensagem! Este é um teste básico do chatbot. Em breve estarei totalmente funcional com IA! 🤖</div>
-                    `;
-                    messagesDiv.appendChild(botMsg);
-                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-                }, 1000);
+                // Chama API real
+                sendToAPI(message, messagesDiv, config);
 
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             };
@@ -135,3 +126,77 @@ console.log('🚀 Carregando chatbot simplificado...');
         console.error('❌ Erro ao carregar chatbot:', error);
     }
 })();
+
+// Função para enviar mensagem para API
+async function sendToAPI(message, messagesDiv, config) {
+    // Adiciona indicador de digitação
+    const typingMsg = document.createElement('div');
+    typingMsg.className = 'ewcb-message ewcb-message-bot';
+    typingMsg.innerHTML = `
+        <img src="${config.botAvatar}" class="ewcb-avatar" alt="Bot Avatar" />
+        <div class="ewcb-message-content">Digitando...</div>
+    `;
+    messagesDiv.appendChild(typingMsg);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+    try {
+        const response = await fetch('https://profile-chat.vercel.app/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: 'llama-3.1-8b-instant',
+                messages: [
+                    {
+                        role: 'system',
+                        content: 'Você é o assistente do Lukas Gomes, desenvolvedor de Fortaleza-CE. Responda de forma amigável sobre seus projetos e tecnologias.'
+                    },
+                    {
+                        role: 'user',
+                        content: message
+                    }
+                ],
+                max_tokens: 200
+            })
+        });
+
+        // Remove indicador de digitação
+        messagesDiv.removeChild(typingMsg);
+
+        if (!response.ok) {
+            throw new Error(`Erro ${response.status}`);
+        }
+
+        const data = await response.json();
+        const botResponse = data.choices[0].message.content;
+
+        // Adiciona resposta da IA
+        const botMsg = document.createElement('div');
+        botMsg.className = 'ewcb-message ewcb-message-bot';
+        botMsg.innerHTML = `
+            <img src="${config.botAvatar}" class="ewcb-avatar" alt="Bot Avatar" />
+            <div class="ewcb-message-content">${botResponse}</div>
+        `;
+        messagesDiv.appendChild(botMsg);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+    } catch (error) {
+        console.error('Erro na API:', error);
+        
+        // Remove indicador de digitação
+        if (messagesDiv.contains(typingMsg)) {
+            messagesDiv.removeChild(typingMsg);
+        }
+
+        // Adiciona mensagem de erro
+        const errorMsg = document.createElement('div');
+        errorMsg.className = 'ewcb-message ewcb-message-bot';
+        errorMsg.innerHTML = `
+            <img src="${config.botAvatar}" class="ewcb-avatar" alt="Bot Avatar" />
+            <div class="ewcb-message-content">Desculpe, houve um erro. Verifique se a API está configurada no Vercel.</div>
+        `;
+        messagesDiv.appendChild(errorMsg);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+}
