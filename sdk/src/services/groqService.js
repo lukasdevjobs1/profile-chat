@@ -145,7 +145,9 @@ export class GroqService {
       });
 
       if (!response.ok) {
-        throw new Error(`Groq API error: ${response.status}`);
+        const errorText = await response.text();
+        console.error('Resposta da API:', errorText);
+        throw new Error(`Groq API error: ${response.status} - ${errorText}`);
       }
 
       const data = await response.json();
@@ -194,7 +196,13 @@ export class GroqService {
    * @returns {string} Resposta simulada apropriada
    */
   generateMockResponse(text) {
-    return "Obrigado pela mensagem! Este é um teste básico do chatbot. Em breve estarei totalmente funcional com IA! 🤖";
+    const textLower = text.toLowerCase();
+    
+    if (textLower.includes('oi') || textLower.includes('olá')) {
+      return "Olá! Sou o assistente do Lukas Gomes, desenvolvedor de Fortaleza-CE! 🚀\n\nPosso falar sobre:\n• 13 repositórios no GitHub\n• Projetos com JavaScript e Python\n• Chatbots e IA\n• Tecnologias e experiência\n\nO que você quer saber?";
+    }
+    
+    return "Sou o assistente do Lukas! Posso falar sobre seus projetos, tecnologias e experiência como desenvolvedor. O que te interessa?";
   }
 
   /**
