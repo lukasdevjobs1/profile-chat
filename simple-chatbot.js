@@ -188,6 +188,14 @@ async function sendToAPI(message, messagesDiv, config) {
 - Cloud: AWS, GitHub Pages, Vercel
 - Tools: Git/GitHub, Cursor IDE
 
+## INSTRUÇÕES IMPORTANTES:
+- Responda APENAS sobre informações fornecidas acima
+- NÃO invente detalhes sobre projetos não listados
+- NÃO mencione tecnologias que não estão no stack tecnológico
+- Mantenha foco nos 13 repositórios do GitHub
+- Se perguntado sobre algo fora do contexto, redirecione para os projetos reais
+- Seja preciso e factual baseado apenas nas informações do portfólio
+
 Responda de forma natural e conversacional sobre os projetos e tecnologias do Lukas.`,
           },
           {
