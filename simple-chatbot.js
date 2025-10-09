@@ -209,19 +209,17 @@ async function sendToAPI(message, messagesDiv, config) {
 
 // Função para efeito de digitação suave
 async function typeWriterEffect(element, text, messagesDiv) {
-    let currentText = '';
-    const words = text.split(' ');
+    element.textContent = '';
     
-    for (let i = 0; i < words.length; i++) {
-        // Adiciona palavra
-        currentText += (i > 0 ? ' ' : '') + words[i];
-        element.textContent = currentText;
+    for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
         
         // Auto-scroll suave durante a digitação
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
         
-        // Delay entre palavras (80-150ms)
-        await new Promise(resolve => setTimeout(resolve, 80 + Math.random() * 70));
+        // Delay entre caracteres (30-80ms)
+        const delay = text[i] === ' ' ? 50 : (30 + Math.random() * 50);
+        await new Promise(resolve => setTimeout(resolve, delay));
     }
     
     // Scroll final
