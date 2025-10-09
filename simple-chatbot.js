@@ -119,8 +119,9 @@ console.log('🚀 Carregando chatbot simplificado...');
         };
         document.body.appendChild(welcomeBubble);
 
-        console.log('✅ Chatbot simplificado carregado com sucesso!');
-        console.log('🎉 Você deve ver o botão do chat no canto inferior direito!');
+        console.log('✅ Chatbot com API REAL carregado com sucesso!');
+        console.log('🎉 Agora o chatbot usa IA de verdade!');
+        console.log('🔥 Versão atualizada - Cache limpo!');
 
     } catch (error) {
         console.error('❌ Erro ao carregar chatbot:', error);
@@ -182,7 +183,10 @@ async function sendToAPI(message, messagesDiv, config) {
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
     } catch (error) {
-        console.error('Erro na API:', error);
+        console.error('=== ERRO DETALHADO DA API ===');
+        console.error('Erro:', error);
+        console.error('Message:', error.message);
+        console.error('Stack:', error.stack);
         
         // Remove indicador de digitação
         if (messagesDiv.contains(typingMsg)) {
