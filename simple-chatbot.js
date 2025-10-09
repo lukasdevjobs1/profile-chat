@@ -195,7 +195,7 @@ Responda de forma natural e conversacional sobre os projetos e tecnologias do Lu
             content: message,
           },
         ],
-        max_tokens: 200,
+        max_tokens: 500,
       }),
       signal: currentAbortController.signal,
     });
