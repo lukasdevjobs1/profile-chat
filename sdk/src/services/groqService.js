@@ -39,18 +39,22 @@ export class GroqService {
   async init(systemPrompt) {
     this.systemPrompt = systemPrompt;
 
-    // Configuração padrão para modo proxy (produção)
-    this.config = {
-      groq: {
-        apiKey: "proxy_mode", // Não usado em produção (proxy handle isso)
-        model: "llama-3.1-8b-instant",
-        baseUrl: "https://api.groq.com/openai/v1/chat/completions",
-      },
-    };
-
-    // Não tenta mais carregar arquivo de configuração
-    // Usa apenas configuração padrão
-    console.log('Usando configuração padrão (sem arquivo)');
+    // Tenta carregar configuração do arquivo
+    try {
+      const response = await fetch('./botData/api-config.json');
+      this.config = await response.json();
+      console.log('✅ Configuração carregada do arquivo');
+    } catch (error) {
+      // Fallback para configuração padrão
+      this.config = {
+        groq: {
+          apiKey: "proxy_mode",
+          model: "llama-3.1-8b-instant",
+          baseUrl: "https://api.groq.com/openai/v1/chat/completions",
+        },
+      };
+      console.log('⚠️ Usando configuração padrão (arquivo não encontrado)');
+    }
 
     return true;
   }
@@ -81,18 +85,21 @@ export class GroqService {
       window.location.hostname === "lukasdevjobs1.github.io";
     const isVercel = window.location.hostname.includes("vercel.app");
     const isProduction = isGitHubPages || isVercel;
+    const hasApiKey = this.config.groq.apiKey && this.config.groq.apiKey !== "proxy_mode";
 
-    // GitHub Pages não suporta APIs, usa Vercel
-    const apiUrl = isProduction
-      ? 'https://profile-chat.vercel.app/api/chat' // Vercel API
-      : this.config.groq.baseUrl; // API direta (desenvolvimento)
+    // Usa API direta se tiver chave, senão usa proxy
+    const apiUrl = hasApiKey && !isGitHubPages
+      ? this.config.groq.baseUrl // API direta com chave
+      : 'https://profile-chat.vercel.app/api/chat'; // Proxy Vercel
 
-    let ambiente = "Local";
-    if (isGitHubPages) ambiente = "GitHub Pages";
-    if (isVercel) ambiente = "Vercel";
+    let ambiente = "Local com API Key";
+    if (isGitHubPages) ambiente = "GitHub Pages (Proxy)";
+    if (isVercel) ambiente = "Vercel (Proxy)";
+    if (!hasApiKey) ambiente = "Local (Proxy)";
 
     console.log("Ambiente:", ambiente);
     console.log("URL da API:", apiUrl);
+    console.log("Tem API Key:", hasApiKey);
     console.log("Hostname:", window.location.hostname);
 
     // Detecta menções a projetos específicos para enriquecer contexto
@@ -122,15 +129,14 @@ export class GroqService {
       const headers = { "Content-Type": "application/json" };
 
       // Debug: mostrar valores
+      console.log("=== DEBUG GROQ SERVICE ===");
       console.log("isProduction:", isProduction);
-      console.log("apiKey:", this.config.groq.apiKey);
-      console.log(
-        "apiKey !== proxy_mode:",
-        this.config.groq.apiKey !== "proxy_mode"
-      );
+      console.log("hasApiKey:", hasApiKey);
+      console.log("apiKey:", this.config.groq.apiKey?.substring(0, 10) + '...');
+      console.log("URL que será usada:", apiUrl);
 
-      // Adiciona Authorization apenas se não for produção (proxy)
-      if (!isProduction && this.config.groq.apiKey !== "proxy_mode") {
+      // Adiciona Authorization se tiver API key e não for GitHub Pages
+      if (hasApiKey && !isGitHubPages) {
         headers["Authorization"] = `Bearer ${this.config.groq.apiKey}`;
         console.log("Usando API key local");
       } else {
@@ -173,7 +179,10 @@ export class GroqService {
 
       return this.createAsyncIterator(content);
     } catch (error) {
-      console.error("Groq API error:", error);
+      console.error("=== ERRO NA API GROQ ===");
+      console.error("Erro completo:", error);
+      console.error("Mensagem:", error.message);
+      console.error("Stack:", error.stack);
       // Fallback para resposta simulada em caso de erro
       const mockResponse = this.generateMockResponse(text);
 
@@ -200,28 +209,7 @@ export class GroqService {
    * @returns {string} Resposta simulada apropriada
    */
   generateMockResponse(text) {
-    const textLower = text.toLowerCase();
-
-    // Detecta cumprimentos
-    if (textLower.match(/\b(oi|olá|hey|ola|e ai)\b/)) {
-      return "Olá! Sou o assistente do Lukas, desenvolvedor junior em evolução de Fortaleza-CE! Posso falar sobre seus 13 repositórios, projetos com IA e tecnologias. O que você quer saber?";
-    }
-
-    // Detecta perguntas sobre projetos específicos
-    if (
-      textLower.includes("git_projects") ||
-      textLower.includes("git-projects")
-    ) {
-      return "O Git_Projects é um repositório de aprendizado onde o Lukas está desenvolvendo algoritmos, interfaces gráficas e integrações. Inclui implementação de Fibonacci, GUI com Python e integração com GitHub API. Quer que eu busque os detalhes reais do repositório?";
-    }
-
-    // Detecta perguntas sobre chatbots
-    if (textLower.includes("chatbot") || textLower.includes("bot")) {
-      return "O Lukas tem 2 chatbots: este que você está usando (profile-chat) com sistema híbrido Chrome AI + Groq, e o semana-javascript-expert09 do desafio do Erick Wendel. Quer saber mais sobre algum?";
-    }
-
-    // Resposta padrão genérica
-    return "Sou o assistente do Lukas Gomes! Posso falar sobre seus projetos, tecnologias (JavaScript, Python) e jornada como desenvolvedor. Mencione um projeto específico e eu busco os dados reais do GitHub! O que você quer saber?";
+    return "Obrigado pela mensagem! Este é um teste básico do chatbot. Em breve estarei totalmente funcional com IA! 🤖";
   }
 
   /**
