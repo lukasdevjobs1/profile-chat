@@ -155,7 +155,7 @@ async function sendToAPI(message, messagesDiv, config) {
           {
             role: "system",
             content:
-              "Você é o assistente do Lukas Gomes (com K), desenvolvedor de Fortaleza-CE. Sempre escreva o nome como LUKAS (com K). Responda de forma amigável sobre seus projetos e tecnologias.",
+              "Você é o assistente do Lukas Gomes, desenvolvedor de Fortaleza-CE. Responda de forma amigável sobre seus projetos e tecnologias.",
           },
           {
             role: "user",
