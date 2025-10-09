@@ -172,15 +172,17 @@ async function sendToAPI(message, messagesDiv, config) {
         const data = await response.json();
         const botResponse = data.choices[0].message.content;
 
-        // Adiciona resposta da IA
+        // Cria mensagem vazia para efeito de digitação
         const botMsg = document.createElement('div');
         botMsg.className = 'ewcb-message ewcb-message-bot';
         botMsg.innerHTML = `
             <img src="${config.botAvatar}" class="ewcb-avatar" alt="Bot Avatar" />
-            <div class="ewcb-message-content">${botResponse}</div>
+            <div class="ewcb-message-content"></div>
         `;
         messagesDiv.appendChild(botMsg);
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+        // Inicia efeito de digitação
+        await typeWriterEffect(botMsg.querySelector('.ewcb-message-content'), botResponse, messagesDiv);
 
     } catch (error) {
         console.error('=== ERRO DETALHADO DA API ===');
@@ -203,4 +205,25 @@ async function sendToAPI(message, messagesDiv, config) {
         messagesDiv.appendChild(errorMsg);
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
+}
+
+// Função para efeito de digitação suave
+async function typeWriterEffect(element, text, messagesDiv) {
+    let currentText = '';
+    const words = text.split(' ');
+    
+    for (let i = 0; i < words.length; i++) {
+        // Adiciona palavra
+        currentText += (i > 0 ? ' ' : '') + words[i];
+        element.textContent = currentText;
+        
+        // Auto-scroll suave durante a digitação
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+        // Delay entre palavras (80-150ms)
+        await new Promise(resolve => setTimeout(resolve, 80 + Math.random() * 70));
+    }
+    
+    // Scroll final
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
