@@ -22,36 +22,38 @@ import { ChatbotController } from './controllers/chatBotController.js';
  * - Configurações gerais do chatbot
  */
 (async () => {
-    // Configura URLs base para recursos do projeto
-    const root = new URL('../../', import.meta.url);
-    const fromMainProject = (path) => new URL(path, root).toString();
-    
-    // Carrega todos os recursos necessários em paralelo
-    const [css, html, systemPrompt, config] = await Promise.all([
-        fetch('./sdk/ew-chatbot.css').then(r => r.text()),
-        fetch('./sdk/ew-chatbot.html').then(r => r.text()),
-        fetch('./botData/systemPrompt.txt').then(r => r.text()),
-        fetch('./botData/chatbot-config.json').then(r => r.json()),
-    ]);
+    try {
+        // Carrega todos os recursos necessários em paralelo
+        const [css, html, systemPrompt, config] = await Promise.all([
+            fetch('./sdk/ew-chatbot.css').then(r => r.text()),
+            fetch('./sdk/ew-chatbot.html').then(r => r.text()),
+            fetch('./botData/systemPrompt.txt').then(r => r.text()),
+            fetch('./botData/chatbot-config.json').then(r => r.json()),
+        ]);
 
-    // Injeta CSS na página
-    const style = document.createElement('style');
-    style.textContent = css;
-    document.head.appendChild(style);
+        // Injeta CSS na página
+        const style = document.createElement('style');
+        style.textContent = css;
+        document.head.appendChild(style);
 
-    // Injeta HTML do chatbot na página
-    const container = document.createElement('div');
-    container.innerHTML = html;
-    document.body.appendChild(container);
+        // Injeta HTML do chatbot na página
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
 
-    // Inicializa serviços e componentes do chatbot
-    const promptService = new HybridPromptService();
-    const chatbotView = new ChatbotView(config);
-    const controller = new ChatbotController({ chatbotView, promptService });
-    
-    // Inicializa o chatbot com configurações e mensagem inicial
-    controller.init({
-        firstBotMessage: config.firstBotMessage,
-        text: systemPrompt,
-    });
+        // Inicializa serviços e componentes do chatbot
+        const promptService = new HybridPromptService();
+        const chatbotView = new ChatbotView(config);
+        const controller = new ChatbotController({ chatbotView, promptService });
+        
+        // Inicializa o chatbot com configurações e mensagem inicial
+        controller.init({
+            firstBotMessage: config.firstBotMessage,
+            text: systemPrompt,
+        });
+        
+        console.log('✅ Chatbot inicializado com sucesso!');
+    } catch (error) {
+        console.error('❌ Erro ao inicializar chatbot:', error);
+    }
 })();
