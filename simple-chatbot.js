@@ -131,8 +131,18 @@ console.log("🚀 Carregando chatbot simplificado...");
   }
 })();
 
+// Variável global para controlar cancelamento
+let currentAbortController = null;
+
 // Função para enviar mensagem para API
 async function sendToAPI(message, messagesDiv, config) {
+  // Cancela requisição anterior se existir
+  if (currentAbortController) {
+    currentAbortController.abort();
+  }
+  
+  // Cria novo controlador de cancelamento
+  currentAbortController = new AbortController();
   // Adiciona indicador de digitação
   const typingMsg = document.createElement("div");
   typingMsg.className = "ewcb-message ewcb-message-bot";
@@ -154,8 +164,31 @@ async function sendToAPI(message, messagesDiv, config) {
         messages: [
           {
             role: "system",
-            content:
-              "Você é o assistente do Lukas Gomes, desenvolvedor de Fortaleza-CE. Responda de forma amigável sobre seus projetos e tecnologias.",
+            content: `Você é o assistente pessoal do Lukas Albertino Gomes (lukasdevjobs1), desenvolvedor Full Stack em constante evolução.
+
+## Sobre o Lukas:
+- Natural de Fortaleza-CE, cursando Análise e Desenvolvimento de Sistemas na UniSantaCruz
+- Atualmente no curso PYIA | Python IA da Infinity School (50% concluído)
+- Desenvolvedor apaixonado por tecnologia, sempre buscando as melhores práticas
+- GitHub: https://github.com/lukasdevjobs1
+- Contatos: LinkedIn, Gmail (luk.devjobs@gmail.com), WhatsApp, Twitter/X
+
+## PORTFÓLIO COMPLETO (13 repositórios):
+
+### PROJETOS ORIGINAIS (4):
+1. **Git_Projects** (Python/HTML/CSS/JavaScript) - 1 star ⭐
+2. **profile-chat** (JavaScript/HTML/CSS/AI) - ChatBot AI
+3. **Exercicios_praticos_InfinitySchool** (Python/SQLite/JSON/CSV/CLI) - 1 star, 1 fork
+4. **bia** (JavaScript) - 1 star
+
+## STACK TECNOLÓGICO:
+- Frontend: HTML5, CSS3, JavaScript
+- Backend: Python, SQLite
+- AI/Chatbots: Desenvolvimento de Chatbots, Integração com IA
+- Cloud: AWS, GitHub Pages, Vercel
+- Tools: Git/GitHub, Cursor IDE
+
+Responda de forma natural e conversacional sobre os projetos e tecnologias do Lukas.`,
           },
           {
             role: "user",
@@ -164,6 +197,7 @@ async function sendToAPI(message, messagesDiv, config) {
         ],
         max_tokens: 200,
       }),
+      signal: currentAbortController.signal,
     });
 
     // Remove indicador de digitação
@@ -219,6 +253,11 @@ async function typeWriterEffect(element, text, messagesDiv) {
   element.textContent = "";
 
   for (let i = 0; i < text.length; i++) {
+    // Verifica se foi cancelado
+    if (currentAbortController && currentAbortController.signal.aborted) {
+      break;
+    }
+    
     element.textContent += text[i];
 
     // Auto-scroll suave durante a digitação
@@ -231,4 +270,5 @@ async function typeWriterEffect(element, text, messagesDiv) {
 
   // Scroll final
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  currentAbortController = null;
 }
