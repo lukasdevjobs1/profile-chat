@@ -1,47 +1,27 @@
 {
   "projects": [
     {
-      "name": "BarberShop",
-      "description": "Projeto de barbearia em TypeScript",
-      "technologies": ["TypeScript", "HTML", "CSS"],
-      "url": "https://github.com/lukasdevjobs1/BarberShop",
-      "highlights": ["TypeScript", "Projeto 2025"],
-      "stars": 1,
-      "status": "Ativo"
-    },
-    {
-      "name": "Git_Projects",
-      "description": "Para mostrar habilidades técnicas",
-      "technologies": ["Python", "HTML", "CSS", "JavaScript"],
-      "url": "https://github.com/lukasdevjobs1/Git_Projects",
-      "highlights": ["Portfólio técnico", "Licença MIT"],
-      "stars": 1,
-      "status": "Ativo"
-    },
-    {
       "name": "profile-chat",
-      "description": "ChatBot AI para perfil profissional",
-      "technologies": ["JavaScript", "HTML", "CSS", "AI"],
+      "description": "ChatBot AI para perfil profissional com integração Claude API",
+      "technologies": ["JavaScript", "HTML", "CSS", "AI", "Claude API"],
       "url": "https://github.com/lukasdevjobs1/profile-chat",
       "live_url": "https://lukasdevjobs1.github.io/profile-chat/",
-      "highlights": ["ChatBot AI", "GitHub Pages", "Vercel"],
+      "highlights": [
+        "ChatBot AI",
+        "GitHub Pages",
+        "Vercel",
+        "Streaming de respostas",
+        "Stop button"
+      ],
       "stars": 3,
       "status": "Ativo"
     },
     {
-      "name": "lukasdevjobs1",
-      "description": "Repositório de perfil pessoal",
-      "technologies": ["Markdown", "Profile"],
-      "url": "https://github.com/lukasdevjobs1/lukasdevjobs1",
-      "highlights": ["Profile README", "Apresentação pessoal"],
-      "stars": 1,
-      "status": "Ativo"
-    },
-    {
       "name": "Exercicios_praticos_InfinitySchool",
-      "description": "Repositório completo do curso PYIA | Python IA da Infinity School",
+      "description": "Todos os exercícios feitos durante a jornada de aprendizado no curso PYIA | Python IA",
       "technologies": ["Python", "SQLite", "JSON", "CSV", "CLI"],
       "url": "https://github.com/lukasdevjobs1/Exercicios_praticos_InfinitySchool",
+      "live_url": "https://exercicios-praticos-infinity-school.vercel.app",
       "highlights": [
         "50% concluído (33/66 aulas)",
         "Sistema de Controle de Gastos CLI",
@@ -51,7 +31,6 @@
         "Algoritmos de busca binária"
       ],
       "stars": 2,
-      "forks": 1,
       "status": "Ativo",
       "details": {
         "course_progress": "50% (33/66 aulas)",
@@ -65,12 +44,21 @@
           {
             "name": "Sistema de Controle de Gastos CLI",
             "description": "Aplicação completa para gerenciar despesas e receitas",
-            "features": ["Persistência CSV", "Interface CLI interativa", "Relatórios"]
+            "features": [
+              "Persistência CSV",
+              "Interface CLI interativa",
+              "Relatórios"
+            ]
           },
           {
             "name": "Sistema de Tarefas Diárias",
             "description": "Gerenciador de tarefas com prioridades e categorias",
-            "features": ["Persistência JSON", "Prioridades", "Categorias", "Sets"]
+            "features": [
+              "Persistência JSON",
+              "Prioridades",
+              "Categorias",
+              "Sets"
+            ]
           },
           {
             "name": "Sistema de Agenda",
@@ -109,6 +97,43 @@
       }
     },
     {
+      "name": "MonitoramentoGit",
+      "description": "Script shell para automação e monitoramento de repositórios Git",
+      "technologies": ["Shell", "Bash", "Git"],
+      "url": "https://github.com/lukasdevjobs1/MonitoramentoGit",
+      "highlights": ["Shell scripting", "Automação Git", "Scripting Unix"],
+      "stars": 1,
+      "status": "Ativo"
+    },
+    {
+      "name": "Desafios_Infinity_School",
+      "description": "Repositório de desafios realizados para as aulas de Lógica de Programação com Python",
+      "technologies": ["Python", "Lógica de Programação"],
+      "url": "https://github.com/lukasdevjobs1/Desafios_Infinity_School",
+      "highlights": ["Desafios de lógica", "Python", "Infinity School"],
+      "stars": 1,
+      "status": "Ativo"
+    },
+    {
+      "name": "Git_Projects",
+      "description": "Portfólio para demonstrar habilidades técnicas",
+      "technologies": ["Python", "HTML", "CSS", "JavaScript"],
+      "url": "https://github.com/lukasdevjobs1/Git_Projects",
+      "highlights": ["Portfólio técnico", "Licença MIT"],
+      "stars": 1,
+      "status": "Ativo"
+    },
+    {
+      "name": "lukasdevjobs1",
+      "description": "Repositório de perfil pessoal no GitHub",
+      "technologies": ["Markdown"],
+      "url": "https://github.com/lukasdevjobs1/lukasdevjobs1",
+      "live_url": "https://lukasdevjobs1.vercel.app",
+      "highlights": ["Profile README", "Apresentação pessoal", "Vercel"],
+      "stars": 1,
+      "status": "Ativo"
+    },
+    {
       "name": "bia",
       "description": "Projeto em JavaScript",
       "technologies": ["JavaScript"],
@@ -122,40 +147,69 @@
     {
       "name": "agno",
       "description": "Framework open-source para sistemas multi-agente com memória, conhecimento e raciocínio",
-      "technologies": ["Multi-Agent", "AI", "Framework"],
+      "technologies": ["Python", "Multi-Agent", "AI", "Framework"],
       "url": "https://github.com/lukasdevjobs1/agno",
       "highlights": ["Multi-Agent Systems", "Memory & Reasoning"],
+      "stars": 2,
       "type": "Fork"
     },
     {
-      "name": "DataBase_Project",
-      "description": "Projeto de banco de dados realizado em equipe",
-      "technologies": ["Python", "Database", "Team Project"],
-      "url": "https://github.com/lukasdevjobs1/DataBase_Project",
-      "highlights": ["Trabalho em equipe", "Banco de dados"],
+      "name": "claude-code",
+      "description": "Ferramenta de coding agentic da Anthropic — vive no terminal, entende o codebase e executa tarefas por linguagem natural",
+      "technologies": ["AI", "CLI", "Agentic Coding", "Anthropic"],
+      "url": "https://github.com/lukasdevjobs1/claude-code",
+      "highlights": ["Claude Code CLI", "Agentic AI", "Anthropic"],
+      "stars": 1,
       "type": "Fork"
     },
     {
       "name": "semana-javascript-expert09",
       "description": "Criando um chatbot inteligente 100% offline e no navegador",
-      "technologies": ["JavaScript", "AI", "Chatbot"],
+      "technologies": ["JavaScript", "AI", "Chatbot", "Web APIs"],
       "url": "https://github.com/lukasdevjobs1/semana-javascript-expert09",
-      "highlights": ["Chatbot offline", "JavaScript Expert"],
-      "stars": 1,
+      "highlights": ["Chatbot offline", "JavaScript Expert", "Browser AI"],
+      "stars": 2,
+      "type": "Fork"
+    },
+    {
+      "name": "DataBase_Project",
+      "description": "Projeto de banco de dados realizado em trabalho de equipe",
+      "technologies": ["Python", "Database", "SQLite", "Team Project"],
+      "url": "https://github.com/lukasdevjobs1/DataBase_Project",
+      "highlights": ["Trabalho em equipe", "Banco de dados"],
+      "stars": 2,
       "type": "Fork"
     },
     {
       "name": "grokking_algorithms",
-      "description": "Código do livro Grokking Algorithms",
-      "technologies": ["Algoritmos", "Estruturas de Dados"],
+      "description": "Código do livro Grokking Algorithms — estruturas de dados e algoritmos",
+      "technologies": ["Python", "Algoritmos", "Estruturas de Dados"],
       "url": "https://github.com/lukasdevjobs1/grokking_algorithms",
       "highlights": ["Estudo de algoritmos", "Livro técnico"],
-      "stars": 1,
+      "stars": 2,
+      "type": "Fork"
+    },
+    {
+      "name": "Agents-Prompts",
+      "description": "Coleção de prompts para agentes de IA",
+      "technologies": ["AI", "Prompts", "Prompt Engineering", "Agents"],
+      "url": "https://github.com/lukasdevjobs1/Agents-Prompts",
+      "highlights": ["Prompt Engineering", "IA e Agentes", "GPL-3.0"],
+      "stars": 2,
+      "type": "Fork"
+    },
+    {
+      "name": "BibliotecaDev",
+      "description": "Biblioteca de livros essenciais da área da programação",
+      "technologies": ["Recursos", "Livros"],
+      "url": "https://github.com/lukasdevjobs1/BibliotecaDev",
+      "highlights": ["Recursos educacionais", "Licença MIT"],
+      "stars": 2,
       "type": "Fork"
     },
     {
       "name": "developer-roadmap",
-      "description": "Roadmaps interativos para desenvolvedores",
+      "description": "Roadmaps interativos para desenvolvedores — guias de carreira completos",
       "technologies": ["Roadmaps", "Carreira"],
       "url": "https://github.com/lukasdevjobs1/developer-roadmap",
       "highlights": ["Guias de carreira", "Roadmap.sh"],
@@ -164,69 +218,42 @@
     },
     {
       "name": "mcp",
-      "description": "AWS MCP Servers - Model Context Protocol",
-      "technologies": ["AWS", "MCP", "Cloud"],
+      "description": "AWS MCP Servers — Model Context Protocol para integração com AWS",
+      "technologies": ["AWS", "MCP", "Cloud", "Model Context Protocol"],
       "url": "https://github.com/lukasdevjobs1/mcp",
       "highlights": ["AWS Integration", "Model Context Protocol"],
-      "stars": 1,
-      "type": "Fork"
-    },
-    {
-      "name": "BibliotecaDev",
-      "description": "Biblioteca de livros essenciais da programação",
-      "technologies": ["Recursos", "Livros"],
-      "url": "https://github.com/lukasdevjobs1/BibliotecaDev",
-      "highlights": ["Recursos educacionais", "Licença MIT"],
-      "stars": 1,
-      "type": "Fork"
-    },
-    {
-      "name": "Desafios_Infinity_School",
-      "description": "Desafios de lógica de programação com Python",
-      "technologies": ["Python", "Lógica"],
-      "url": "https://github.com/lukasdevjobs1/Desafios_Infinity_School",
-      "highlights": ["Desafios educacionais", "Python"],
-      "stars": 1,
-      "type": "Fork"
-    },
-    {
-      "name": "Agents-Prompts",
-      "description": "Prompts para agentes de IA",
-      "technologies": ["AI", "Prompts", "Agents"],
-      "url": "https://github.com/lukasdevjobs1/Agents-Prompts",
-      "highlights": ["IA e Prompts", "GPL-3.0"],
       "stars": 1,
       "type": "Fork"
     }
   ],
   "technologies": {
-    "frontend": {
+    "frontend_mobile": {
       "HTML5": {
         "level": "Avançado",
         "projects": ["Git_Projects", "profile-chat", "lukasdevjobs1"],
-        "frameworks": ["Semântico", "GitHub Pages"],
+        "frameworks": ["Semântico", "GitHub Pages", "Acessibilidade"],
         "description": "Estruturação semântica moderna, SEO, acessibilidade"
       },
       "CSS3": {
         "level": "Intermediário",
-        "projects": ["Git_Projects", "profile-chat", "lukasdevjobs1"],
-        "frameworks": ["Flexbox", "Grid", "Responsive Design"],
-        "description": "Layouts responsivos, animações, interfaces modernas"
+        "projects": ["Git_Projects", "profile-chat"],
+        "frameworks": ["Flexbox", "Grid", "Responsive Design", "CSS Variables"],
+        "description": "Layouts responsivos, animações, variáveis CSS, interfaces modernas"
       },
       "JavaScript": {
         "level": "Intermediário",
         "projects": ["profile-chat", "bia", "semana-javascript-expert09"],
-        "frameworks": ["ES6+", "Fetch API", "DOM Manipulation"],
-        "description": "Chatbots AI, integração com APIs, programação assíncrona"
+        "frameworks": ["ES6+", "Fetch API", "DOM Manipulation", "Async/Await"],
+        "description": "Chatbots AI, integração com APIs, programação assíncrona, streaming"
       },
-      "TypeScript": {
-        "level": "Básico",
-        "projects": ["BarberShop"],
-        "frameworks": ["Type Safety", "Modern JS"],
-        "description": "Tipagem estática, desenvolvimento mais seguro"
+      "Flutter": {
+        "level": "Intermediário",
+        "projects": [],
+        "frameworks": ["Dart", "Cross-platform", "Mobile UI"],
+        "description": "Desenvolvimento mobile cross-platform com Dart"
       }
     },
-    "backend": {
+    "backend_data": {
       "Python": {
         "level": "Intermediário",
         "projects": [
@@ -235,7 +262,12 @@
           "Desafios_Infinity_School",
           "DataBase_Project"
         ],
-        "frameworks": ["CLI Applications", "File Handling", "Data Structures"],
+        "frameworks": [
+          "CLI Applications",
+          "File Handling",
+          "Data Structures",
+          "OOP"
+        ],
         "libraries": ["sqlite3", "json", "csv", "os", "datetime"],
         "description": "Sistemas CLI completos, CRUD, algoritmos, estruturas de dados",
         "specialties": [
@@ -248,125 +280,95 @@
           "Projetos em equipe"
         ]
       },
-      "SQLite": {
-        "level": "Intermediário",
-        "projects": ["Exercicios_praticos_InfinitySchool", "DataBase_Project"],
-        "frameworks": ["Database Design", "CRUD Operations"],
-        "description": "Banco de dados relacional, operações CRUD, projetos em equipe"
-      }
-    },
-    "ai_chatbots": {
-      "Chatbot_Development": {
-        "level": "Intermediário",
-        "projects": ["profile-chat", "semana-javascript-expert09"],
-        "frameworks": ["Groq API", "Chrome AI", "Offline Bots"],
-        "technologies": ["JavaScript", "API Integration", "Streaming"],
-        "description": "Chatbots AI híbridos, integração com múltiplas APIs"
+      "Streamlit": {
+        "level": "Básico",
+        "projects": [],
+        "frameworks": ["Python Web Apps", "Data Visualization", "Dashboard"],
+        "description": "Criação de aplicações web e dashboards com Python puro"
       },
-      "AI_Integration": {
-        "level": "Intermediário",
-        "projects": ["Agents-Prompts", "agno"],
-        "frameworks": ["Multi-Agent Systems", "Prompt Engineering"],
-        "technologies": ["Memory Systems", "Knowledge Base", "Reasoning"],
-        "description": "Sistemas multi-agente, prompts avançados, frameworks de IA"
+      "Node.js": {
+        "level": "Básico",
+        "projects": [],
+        "frameworks": ["JavaScript Runtime", "Backend", "APIs"],
+        "description": "Desenvolvimento backend com JavaScript no servidor"
       }
     },
-    "cloud_deploy": {
+    "cloud_devops": {
       "AWS": {
-        "level": "Intermediário",
+        "level": "Básico",
         "projects": ["mcp"],
         "frameworks": ["MCP Servers", "Model Context Protocol"],
-        "services": ["Cloud Integration", "Serverless"],
+        "services": ["Cloud Integration"],
         "description": "AWS MCP Servers, integração com serviços cloud"
       },
-      "GitHub_Pages": {
-        "level": "Avançado",
-        "projects": ["profile-chat", "lukasdevjobs1"],
-        "frameworks": ["Static Site Hosting", "Custom Domains"],
-        "description": "Deploy automático, hospedagem de sites estáticos"
-      },
-      "Vercel": {
-        "level": "Intermediário",
-        "projects": ["profile-chat"],
-        "frameworks": ["Serverless Functions", "API Proxy"],
-        "description": "Deploy de APIs, funções serverless, proxy seguro"
-      }
-    },
-    "development_tools": {
       "Git": {
         "level": "Avançado",
-        "projects": ["Todos os 15 repositórios"],
+        "projects": ["Todos os 16 repositórios"],
         "frameworks": ["Version Control", "Branching", "Merging"],
         "description": "Controle de versão avançado, colaboração, workflows"
       },
       "GitHub": {
         "level": "Avançado",
-        "projects": ["Todos os 15 repositórios"],
+        "projects": ["Todos os 16 repositórios"],
         "frameworks": ["GitHub Pages", "Actions", "API Integration"],
-        "description": "15 repositórios, 9 stars, colaboração, licenças MIT"
+        "description": "16 repositórios, 25 stars, colaboração, deploy automático"
       },
-      "Cursor_IDE": {
-        "level": "Intermediário",
-        "projects": ["Todos os 15 repositórios"],
-        "frameworks": ["AI-Powered IDE", "Code Completion"],
-        "description": "IDE com IA, desenvolvimento eficiente, autocomplete inteligente"
-      }
-    },
-    "algorithms_structures": {
-      "Data_Structures": {
-        "level": "Intermediário",
-        "projects": ["grokking_algorithms", "Exercicios_praticos_InfinitySchool"],
-        "frameworks": ["Lists", "Dictionaries", "Sets", "Binary Search"],
-        "algorithms": ["Search", "Sort", "Graph", "Dynamic Programming"],
-        "description": "Estruturas de dados avançadas, algoritmos de busca e ordenação"
+      "Linux": {
+        "level": "Básico",
+        "projects": [],
+        "frameworks": ["Terminal", "Shell", "CLI"],
+        "description": "Sistema operacional Linux, linha de comando, automação"
       },
-      "Problem_Solving": {
+      "Oracle VM VirtualBox": {
         "level": "Intermediário",
-        "projects": [
-          "Exercicios_praticos_InfinitySchool",
-          "Desafios_Infinity_School"
-        ],
-        "platforms": ["HackerRank", "Infinity School"],
-        "skills": ["Logic", "Mathematics", "Optimization"],
-        "description": "9 problemas HackerRank resolvidos, lógica avançada"
+        "projects": [],
+        "frameworks": ["Oracle Cloud", "Ubuntu", "Server"],
+        "description": "Oracle Linux / Ubuntu para ambientes de servidor e cloud"
+      },
+      "Docker": {
+        "level": "Intermediário",
+        "projects": [],
+        "frameworks": ["Containers", "Docker Compose", "DevOps"],
+        "description": "Containerização de aplicações, ambiente isolado para deploy"
       }
     }
   },
   "stats": {
-    "totalRepositories": 15,
-    "originalProjects": 6,
+    "totalRepositories": 16,
+    "originalProjects": 7,
     "forkedProjects": 9,
-    "totalStars": 9,
-    "totalForks": 1,
-    "githubPagesProjects": 2,
-    "mainLanguages": ["TypeScript", "JavaScript", "Python"],
+    "totalStars": 25,
+    "totalForks": 0,
+    "githubPagesProjects": 1,
+    "vercelProjects": 3,
+    "mainLanguages": ["JavaScript", "Python", "Shell"],
     "specialties": [
       "Desenvolvimento de Chatbots AI",
+      "Integração com Claude API",
       "Sistemas CLI Python Completos",
       "Banco de Dados SQLite",
       "Algoritmos e Estruturas de Dados",
       "Resolução de Problemas HackerRank",
-      "GitHub Pages e Deploy",
+      "GitHub Pages e Deploy Vercel",
       "Desenvolvimento Full Stack",
+      "Shell Scripting e Automação",
       "Lógica de Programação Avançada",
       "Interfaces Responsivas",
-      "Integração com IA"
+      "Prompt Engineering e IA"
     ],
     "activeProjects": [
-      "lukasdevjobs1 (Site pessoal + Chatbot)",
-      "Git_Projects (Portfólio)",
-      "profile-chat (ChatBot AI)",
-      "Exercicios_praticos_InfinitySchool (Curso Python IA - 36% concluído)",
-      "Sistema de Controle de Gastos CLI (Projeto Final)",
-      "Sistema de Tarefas Diárias (Projeto Funções)"
+      "profile-chat (ChatBot AI com Claude API)",
+      "Exercicios_praticos_InfinitySchool (Curso Python IA - 50% concluído)",
+      "MonitoramentoGit (Automação Shell)",
+      "lukasdevjobs1 (Site pessoal no Vercel)"
     ],
     "learningFocus": [
-      "Python IA - Infinity School (36% concluído)",
+      "Python IA - Infinity School (50% concluído)",
       "Estruturas de Dados e Algoritmos",
       "Banco de Dados SQLite",
       "Sistemas CLI Avançados",
       "HackerRank Problem Solving",
-      "JavaScript Expert (semana-javascript-expert09)",
+      "Claude Code e Agentic AI",
       "AWS e Cloud (mcp)",
       "Roadmaps de Carreira (developer-roadmap)"
     ]
@@ -377,8 +379,15 @@
     "linkedin": "https://www.linkedin.com/in/lukas-gomes-4470a2269/",
     "twitter": "https://x.com/LukDev13",
     "whatsapp": "https://wa.me/5585992570216",
-    "location": "Fortaleza-CE",
+    "discord": "lukas#4775",
+    "location": "Fortaleza-CE, Brasil",
     "education": "Análise e Desenvolvimento de Sistemas - UniSantaCruz",
-    "current_course": "PYIA | Python IA - Infinity School (36% concluído)"
+    "current_course": "PYIA | Python IA - Infinity School (50% concluído)",
+    "focus": [
+      "FullStack Development",
+      "IA",
+      "Cloud & AWS",
+      "Data Apps and Systems"
+    ]
   }
 }

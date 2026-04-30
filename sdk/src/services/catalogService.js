@@ -64,7 +64,7 @@ class CatalogService {
         if (!this.catalog) return null;
         
         const techLower = tech.toLowerCase();
-        const categories = ['frontend', 'backend', 'cloud', 'tools'];
+        const categories = ['frontend_mobile', 'backend_data', 'cloud_devops'];
         
         // Busca em todas as categorias de tecnologia
         for (const category of categories) {

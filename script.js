@@ -192,12 +192,9 @@ class PortfolioApp {
 
     formatCategoryName(name) {
         const names = {
-            'frontend': 'Frontend',
-            'backend': 'Backend',
-            'ai_chatbots': 'IA & Chatbots',
-            'cloud': 'Cloud & Deploy',
-            'tools': 'Ferramentas',
-            'algorithms': 'Algoritmos'
+            'frontend_mobile': 'Front-end & Mobile',
+            'backend_data': 'Back-end & Data',
+            'cloud_devops': 'Cloud & DevOps'
         };
         return names[name] || name;
     }
