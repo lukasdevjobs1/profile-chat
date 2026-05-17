@@ -146,18 +146,19 @@
   "private_projects": [
     {
       "name": "BarberLost",
-      "description": "Site profissional desenvolvido para uma barbearia real, resolvendo a falta de presença digital do negócio",
-      "technologies": ["React", "Next.js", "Node.js", "JavaScript"],
+      "description": "Site profissional desenvolvido para uma barbearia real, com login social via Google facilitando o cadastro e autenticação de clientes",
+      "technologies": ["React", "Next.js", "Node.js", "Google OAuth", "JavaScript"],
       "live_url": "https://barberlost.vercel.app/",
       "repository": "Privado",
       "highlights": [
+        "Login social com Google (OAuth)",
+        "Cadastro de clientes sem senha",
         "Projeto para cliente real",
         "Deploy Vercel",
         "React + Next.js",
-        "Node.js backend",
-        "Solução de presença digital"
+        "Node.js backend"
       ],
-      "problem_solved": "Barbearia sem presença digital — criado site profissional para apresentação dos serviços, localização e contato",
+      "problem_solved": "Barbearia sem presença digital e cadastro de clientes trabalhoso — criado site moderno com login via Google, permitindo que clientes façam login e se cadastrem com um único clique",
       "status": "Ativo"
     },
     {

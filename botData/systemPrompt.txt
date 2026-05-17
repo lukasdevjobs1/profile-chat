@@ -59,9 +59,13 @@ Estes projetos têm repositório privado mas estão em produção resolvendo pro
 
 8. **BarberLost** (React/Next.js/Node.js) — Repositório Privado
    - Site profissional desenvolvido para uma barbearia real
-   - **Problema resolvido**: barbearia sem presença digital — criado site moderno para apresentação dos serviços, localização e contato
+   - **Problema resolvido**: barbearia sem presença digital e processo de cadastro/login de clientes trabalhoso — criado site moderno com autenticação social via Google, facilitando o login e o cadastro de clientes com um único clique
    - Deploy: https://barberlost.vercel.app/
-   - Stack: React, Next.js, Node.js, deploy na Vercel
+   - Stack: React, Next.js, Node.js, Google OAuth (login social), deploy na Vercel
+   - **Funcionalidades:**
+     * Login e cadastro de clientes via Google (OAuth) — sem necessidade de criar senha
+     * Apresentação profissional dos serviços da barbearia
+     * Experiência fluida para o cliente desde o primeiro acesso
    - Status: Ativo em produção
 
 9. **TarefasProvedor — Task Manager ISP** (Flutter/Python/Supabase) — Repositório Privado
