@@ -11,6 +11,8 @@ export class ChatbotController {
   #promptService;
   /** @private {AbortController} Controlador para cancelar requisições */
   #abortController;
+  /** @private {boolean} Impede envios concorrentes durante geração */
+  #isGenerating = false;
 
   /**
    * Inicializa o controlador com dependências necessárias
@@ -74,15 +76,20 @@ export class ChatbotController {
    * @param {string} userMsg - Mensagem enviada pelo usuário
    */
   async #chatBotReply(userMsg) {
-    // Configura interface para modo de processamento
+    if (this.#isGenerating) return;
+    this.#isGenerating = true;
+
     this.#chatbotView.showTypingIndicator();
     this.#chatbotView.setInputEnabled(false);
 
+    const done = () => {
+      this.#isGenerating = false;
+      this.#chatbotView.setInputEnabled(true);
+    };
+
     try {
-      // Cria controlador para cancelamento de requisição
       this.#abortController = new AbortController();
 
-      // Cria elemento para resposta em streaming
       const contentnode = this.#chatbotView.createStreamingBotMessage();
       const response = await this.#promptService.prompt(
         userMsg,
@@ -92,7 +99,6 @@ export class ChatbotController {
       let fullResponse = "";
       let lastMessage = "noop";
 
-      // Função para atualizar texto na interface
       const updateText = () => {
         if (!fullResponse) return;
         if (fullResponse === lastMessage) return;
@@ -102,37 +108,32 @@ export class ChatbotController {
         this.#chatbotView.updateStreamingBotMessage(contentnode, fullResponse);
       };
 
-      // Atualiza interface a cada 200ms para simular digitação
       const intervalId = setInterval(updateText, 200);
 
-      // Função para finalizar geração
-      const stopGerenerating = () => {
+      const finish = () => {
         clearInterval(intervalId);
         updateText();
-        this.#chatbotView.setInputEnabled(true);
+        done();
       };
 
-      // Configura listener para cancelamento
-      this.#abortController.signal.addEventListener("abort", stopGerenerating);
+      this.#abortController.signal.addEventListener("abort", finish);
 
-      // Processa resposta em chunks (streaming)
       for await (const chunk of response) {
         if (this.#abortController.signal.aborted) break;
         if (!chunk) continue;
         fullResponse += chunk;
       }
 
-      stopGerenerating();
-    } catch (Error) {
-      // Trata erros de processamento
+      finish();
+    } catch (error) {
       this.#chatbotView.hideTypingIndicator();
-      if (Error.name === "AbortError")
-        return console.log("Error aborted by user");
+      done();
+      if (error.name === "AbortError") return;
 
       this.#chatbotView.appendBotMessage(
         "Erro ao processar sua solicitação. Tente novamente!"
       );
-      console.log("AI prompt error:", Error);
+      console.log("AI prompt error:", error);
     }
   }
 
