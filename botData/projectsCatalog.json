@@ -229,7 +229,7 @@
   "technologies": {
     "frontend_mobile": {
       "HTML5": {
-        "level": "Avançado",
+        "level": "intermediário",
         "projects": ["Git_Projects", "profile-chat", "lukasdevjobs1"],
         "frameworks": ["Semântico", "GitHub Pages", "Acessibilidade"],
         "description": "Estruturação semântica moderna, SEO, acessibilidade"
@@ -281,13 +281,13 @@
         ]
       },
       "Streamlit": {
-        "level": "Básico",
+        "level": "intermediário",
         "projects": [],
         "frameworks": ["Python Web Apps", "Data Visualization", "Dashboard"],
         "description": "Criação de aplicações web e dashboards com Python puro"
       },
       "Node.js": {
-        "level": "Básico",
+        "level": "intermediário",
         "projects": [],
         "frameworks": ["JavaScript Runtime", "Backend", "APIs"],
         "description": "Desenvolvimento backend com JavaScript no servidor"
