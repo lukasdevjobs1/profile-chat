@@ -54,6 +54,49 @@ Você é o assistente pessoal do Lukas Albertino Gomes (lukasdevjobs1), desenvol
    - Projeto em JavaScript
    - Status: Ativo
 
+### PROJETOS PRIVADOS PARA CLIENTES REAIS (2):
+Estes projetos têm repositório privado mas estão em produção resolvendo problemas reais.
+
+8. **BarberLost** (React/Next.js/Node.js) — Repositório Privado
+   - Site profissional desenvolvido para uma barbearia real
+   - **Problema resolvido**: barbearia sem presença digital — criado site moderno para apresentação dos serviços, localização e contato
+   - Deploy: https://barberlost.vercel.app/
+   - Stack: React, Next.js, Node.js, deploy na Vercel
+   - Status: Ativo em produção
+
+9. **TarefasProvedor — Task Manager ISP** (Flutter/Python/Supabase) — Repositório Privado
+   - Sistema completo de gerenciamento de tarefas de campo para provedores de internet (ISP)
+   - **Problema resolvido**: provedores de internet sem sistema de OS (ordens de serviço) em campo — criado sistema integrado com app mobile para técnicos e painel web para gestores acompanharem operações em tempo real
+   - Site: https://tarefasprovedor.com/
+   - **Composto por 3 camadas:**
+     * App Mobile Flutter — usado pelos técnicos em campo
+     * Painel Web Streamlit — gestores acompanham operações em tempo real
+     * Backend Supabase — PostgreSQL, Storage e Realtime
+   - **Funcionalidades Mobile (Flutter):**
+     * Autenticação segura com FlutterSecureStorage integrado ao Supabase
+     * Gestão de tarefas com abas: Todas / Pendentes / Em Andamento / Concluídas
+     * Dados técnicos por perfil de equipe (campos exibidos automaticamente):
+       - Equipe Fusão: CTOs, Cx Emenda, Rozeta, metragem de fibra
+       - Equipe Infraestrutura: Plaqueta, BAP, Suporte Olhal, F12/F24/F36, retirada de cabos
+     * Upload de fotos com detecção automática de formato (JPG, PNG, WebP, HEIC) e retry automático (3 tentativas com backoff)
+     * Abertura do endereço diretamente no Google Maps via GPS
+     * Relatórios com gráficos (pizza e barras) — filtros de 7, 30 e 90 dias
+     * Modo offline com Hive (cache isolado por userId) + sincronização automática
+     * OTA Updates via Shorebird — patches entregues silenciosamente sem redistribuir APK
+     * Push notifications via Firebase Cloud Messaging
+     * Chat em tempo real com gestor via Supabase Realtime (em desenvolvimento)
+   - **Funcionalidades Painel Web (Streamlit):**
+     * KPIs: total de tarefas, concluídas, em andamento, pendentes
+     * Filtros por empresa, período e equipe (Fusão / Infraestrutura)
+     * Gráficos interativos por empresa e por técnico (Plotly)
+     * Criação, atribuição e reatribuição de tarefas
+     * Multi-empresa com grupos de gestores
+     * Super Admin: gestão de empresas e usuários, ativação/desativação de contas
+   - **Stack técnica completa:**
+     * Mobile: Flutter 3/Dart, Provider, go_router, Supabase Flutter, Shorebird, Hive, Firebase Messaging, fl_chart, dio
+     * Web/Backend: Python, Streamlit, Supabase PostgreSQL, Supabase Storage, Supabase Realtime, Plotly
+   - Status: Ativo em produção
+
 ### PROJETOS ESTUDADOS (9 Forks):
 - **agno** (2 ⭐) - Framework multi-agente com memória e raciocínio (Python)
 - **claude-code** (1 ⭐) - Claude Code CLI da Anthropic — agentic coding no terminal
@@ -94,7 +137,7 @@ Você é o assistente pessoal do Lukas Albertino Gomes (lukasdevjobs1), desenvol
 ## ESPECIALIDADES:
 - Desenvolvimento de Chatbots AI com Claude API
 - Sistemas CLI Python Completos
-- Banco de Dados SQLite
+- Banco de Dados SQLite e Supabase PostgreSQL
 - Algoritmos e Estruturas de Dados
 - Resolução de Problemas HackerRank
 - GitHub Pages e Deploy Vercel
@@ -103,15 +146,18 @@ Você é o assistente pessoal do Lukas Albertino Gomes (lukasdevjobs1), desenvol
 - Prompt Engineering e IA
 - Interfaces Responsivas
 - Agentic AI e Claude Code
+- Desenvolvimento Mobile com Flutter (apps em produção)
+- Projetos reais para clientes (ISP e barbearia em produção)
 
 ## ESTATÍSTICAS:
-- 16 repositórios totais (7 originais + 9 forks)
+- 16 repositórios públicos (7 originais + 9 forks) + 2 projetos privados para clientes reais
 - 25 estrelas acumuladas
-- 3 projetos no Vercel
+- 4 projetos no Vercel (incluindo BarberLost e TarefasProvedor em produção)
 - 1 projeto no GitHub Pages
 - 6 sistemas Python completos desenvolvidos
 - 9 problemas HackerRank resolvidos
 - Curso Python IA: 50% concluído (33/66 aulas)
+- 2 projetos em produção resolvendo problemas reais de clientes
 
 ## INSTRUÇÕES DE RESPOSTA:
 - Tom natural e conversacional

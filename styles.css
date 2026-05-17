@@ -246,8 +246,32 @@ body {
 
 .project-description {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.5;
+}
+
+.project-problem {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  border-left: 2px solid var(--accent-blue);
+  background: rgba(0, 122, 255, 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+.project-card--private {
+  border-color: rgba(100, 100, 100, 0.4);
+}
+
+.project-card--private:hover {
+  border-color: var(--accent-blue);
+}
+
+.project-status--private {
+  background: rgba(100, 100, 100, 0.2);
+  color: var(--text-secondary);
 }
 
 .project-tech {

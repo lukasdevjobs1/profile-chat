@@ -48,14 +48,13 @@ class PortfolioApp {
         try {
             const response = await fetch('./botData/projectsCatalog.json');
             const data = await response.json();
-            
-            // Armazena dados carregados
-            this.projects = data.projects;         // Lista de projetos
-            this.technologies = data.technologies; // Tecnologias por categoria
-            this.stats = data.stats;              // Estatísticas do GitHub
+
+            this.projects = data.projects;
+            this.privateProjects = data.private_projects || [];
+            this.technologies = data.technologies;
+            this.stats = data.stats;
         } catch (error) {
             console.error('Erro ao carregar projetos:', error);
-            // Em caso de erro, mantém arrays vazios para evitar crashes
         }
     }
 
@@ -143,9 +142,9 @@ class PortfolioApp {
 
     renderProjects() {
         const projectsGrid = document.getElementById('projects-grid');
-        if (!projectsGrid || !this.projects) return;
+        if (!projectsGrid) return;
 
-        projectsGrid.innerHTML = this.projects.map(project => `
+        const publicCards = (this.projects || []).map(project => `
             <div class="project-card" onclick="window.open('${project.url}', '_blank')">
                 <div class="project-header">
                     <h3 class="project-title">${project.name}</h3>
@@ -153,7 +152,7 @@ class PortfolioApp {
                 </div>
                 <p class="project-description">${project.description}</p>
                 <div class="project-tech">
-                    ${project.technologies.map(tech => 
+                    ${project.technologies.map(tech =>
                         `<span class="tech-tag">${tech}</span>`
                     ).join('')}
                 </div>
@@ -161,14 +160,39 @@ class PortfolioApp {
                     <a href="${project.url}" class="project-link primary" target="_blank">
                         Ver Código
                     </a>
-                    ${project.live_url ? 
+                    ${project.live_url ?
                         `<a href="${project.live_url}" class="project-link" target="_blank">
                             Demo Live
                         </a>` : ''
                     }
                 </div>
             </div>
-        `).join('');
+        `);
+
+        const privateCards = (this.privateProjects || []).map(project => `
+            <div class="project-card project-card--private" onclick="window.open('${project.live_url}', '_blank')">
+                <div class="project-header">
+                    <h3 class="project-title">${project.name}</h3>
+                    <span class="project-status project-status--private">🔒 Privado</span>
+                </div>
+                <p class="project-description">${project.description}</p>
+                ${project.problem_solved ? `<p class="project-problem"><strong>Problema resolvido:</strong> ${project.problem_solved}</p>` : ''}
+                <div class="project-tech">
+                    ${project.technologies.map(tech =>
+                        `<span class="tech-tag">${tech}</span>`
+                    ).join('')}
+                </div>
+                <div class="project-links">
+                    ${project.live_url ?
+                        `<a href="${project.live_url}" class="project-link primary" target="_blank">
+                            Ver Site
+                        </a>` : ''
+                    }
+                </div>
+            </div>
+        `);
+
+        projectsGrid.innerHTML = [...privateCards, ...publicCards].join('');
     }
 
     renderTechnologies() {

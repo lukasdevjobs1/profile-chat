@@ -143,6 +143,69 @@
       "status": "Ativo"
     }
   ],
+  "private_projects": [
+    {
+      "name": "BarberLost",
+      "description": "Site profissional desenvolvido para uma barbearia real, resolvendo a falta de presença digital do negócio",
+      "technologies": ["React", "Next.js", "Node.js", "JavaScript"],
+      "live_url": "https://barberlost.vercel.app/",
+      "repository": "Privado",
+      "highlights": [
+        "Projeto para cliente real",
+        "Deploy Vercel",
+        "React + Next.js",
+        "Node.js backend",
+        "Solução de presença digital"
+      ],
+      "problem_solved": "Barbearia sem presença digital — criado site profissional para apresentação dos serviços, localização e contato",
+      "status": "Ativo"
+    },
+    {
+      "name": "TarefasProvedor",
+      "description": "Sistema completo de gerenciamento de tarefas de campo para provedores de internet (ISP), com app mobile Flutter para técnicos e painel web Streamlit para gestores",
+      "technologies": ["Flutter", "Dart", "Python", "Streamlit", "Supabase", "PostgreSQL", "Firebase", "Shorebird"],
+      "live_url": "https://tarefasprovedor.com/",
+      "repository": "Privado",
+      "problem_solved": "Provedores de internet sem sistema de gestão de ordens de serviço em campo — criado sistema completo com app mobile para técnicos e painel web para gestores acompanharem operações em tempo real",
+      "highlights": [
+        "App Mobile Flutter para técnicos em campo",
+        "Painel Web Streamlit para gestores",
+        "Backend Supabase (PostgreSQL + Storage + Realtime)",
+        "Modo offline com Hive + sincronização automática",
+        "OTA Updates via Shorebird (sem redistribuir APK)",
+        "Push notifications Firebase Cloud Messaging",
+        "Upload de fotos com retry automático e detecção de formato",
+        "Relatórios e gráficos por equipe (Plotly / fl_chart)",
+        "Multi-empresa com controle de permissões",
+        "Perfis de equipe: Fusão e Infraestrutura",
+        "Chat em tempo real via Supabase Realtime"
+      ],
+      "mobile_features": [
+        "Autenticação segura com FlutterSecureStorage",
+        "Gestão de tarefas: Todas / Pendentes / Em Andamento / Concluídas",
+        "Dados técnicos por equipe (Fusão: fibra, CTOs, Cx Emenda; Infraestrutura: plaquetas, BAP, cabos)",
+        "Campos exibidos automaticamente conforme perfil do técnico",
+        "Upload de fotos com retry e bloqueio de finalização se falhar",
+        "Registro de materiais por tarefa",
+        "Abertura no Google Maps via coordenadas GPS",
+        "Relatórios com filtros de 7, 30 e 90 dias",
+        "Cache isolado por userId com Hive — sem vazamento entre técnicos"
+      ],
+      "web_panel_features": [
+        "KPIs: total, concluídas, em andamento, pendentes",
+        "Filtros por empresa, período e equipe",
+        "Gráficos interativos com Plotly",
+        "Criação, atribuição e reatribuição de tarefas",
+        "Multi-empresa com grupos de gestores",
+        "Super Admin: gestão de empresas e usuários"
+      ],
+      "stack": {
+        "mobile": ["Flutter 3 / Dart", "Provider", "go_router", "Supabase Flutter", "Shorebird", "Hive", "Firebase Messaging", "fl_chart", "dio"],
+        "web_backend": ["Python", "Streamlit", "Supabase PostgreSQL", "Supabase Storage", "Supabase Realtime", "Plotly"]
+      },
+      "status": "Ativo"
+    }
+  ],
   "forked_projects": [
     {
       "name": "agno",
