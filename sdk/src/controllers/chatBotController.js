@@ -117,6 +117,7 @@ export class ChatbotController {
 
       // Processa resposta em chunks (streaming)
       for await (const chunk of response) {
+        if (this.#abortController.signal.aborted) break;
         if (!chunk) continue;
         fullResponse += chunk;
       }

@@ -164,7 +164,7 @@ export class GroqService {
         this.conversationHistory = this.conversationHistory.slice(-6);
       }
 
-      return this.createAsyncIterator(content);
+      return this.createAsyncIterator(content, signal);
     } catch (error) {
       console.error("=== ERRO NA API GROQ ===");
       console.error("Erro completo:", error);
@@ -197,12 +197,32 @@ export class GroqService {
    */
   generateMockResponse(text) {
     const textLower = text.toLowerCase();
-    
-    if (textLower.includes('oi') || textLower.includes('olá')) {
-      return "Olá! Sou o assistente do Lukas Gomes, desenvolvedor de Fortaleza-CE! 🚀\n\nPosso falar sobre:\n• 13 repositórios no GitHub\n• Projetos com JavaScript e Python\n• Chatbots e IA\n• Tecnologias e experiência\n\nO que você quer saber?";
+
+    if (textLower.includes('oi') || textLower.includes('olá') || textLower.includes('ola')) {
+      return "Olá! Sou o assistente do Lukas Gomes, desenvolvedor FullStack de Fortaleza-CE!\n\nPosso falar sobre projetos, tecnologias ou carreira. O que você quer saber?";
     }
-    
-    return "Sou o assistente do Lukas! Posso falar sobre seus projetos, tecnologias e experiência como desenvolvedor. O que te interessa?";
+
+    if (
+      textLower.includes('projeto') || textLower.includes('portfólio') ||
+      textLower.includes('portfolio') || textLower.includes('trabalho') ||
+      textLower.includes('fez') || textLower.includes('criou')
+    ) {
+      return "O Lukas tem projetos públicos e privados em produção!\n\n**Projetos para clientes reais (repositórios privados):**\n\n🔒 **BarberLost** — Site profissional para barbearia real com login social via Google (OAuth). Stack: React, Next.js, Node.js. Em produção: https://barberlost.vercel.app/\n\n🔒 **TarefasProvedor** — Sistema completo de gestão de tarefas de campo para provedores de internet (ISP). App mobile Flutter para técnicos + painel web Streamlit para gestores + backend Supabase. Em produção: https://tarefasprovedor.com/\n\n**Projetos públicos no GitHub:**\n• profile-chat — ChatBot AI com Claude API\n• Exercicios_praticos_InfinitySchool — Sistemas Python CLI\n• MonitoramentoGit — Automação Shell\n\nQuer saber mais sobre algum deles?";
+    }
+
+    if (textLower.includes('barbearia') || textLower.includes('barber') || textLower.includes('barberlost')) {
+      return "O **BarberLost** é um site profissional desenvolvido para uma barbearia real!\n\n**Problema resolvido:** a barbearia não tinha presença digital e o cadastro de clientes era trabalhoso. Criado site moderno com login social via Google — o cliente entra com um clique, sem criar senha.\n\n**Stack:** React, Next.js, Node.js, Google OAuth\n**Deploy:** https://barberlost.vercel.app/\n**Repositório:** Privado";
+    }
+
+    if (
+      textLower.includes('tarefas') || textLower.includes('provedor') ||
+      textLower.includes('isp') || textLower.includes('flutter') ||
+      textLower.includes('task manager')
+    ) {
+      return "O **TarefasProvedor** é um sistema completo para provedores de internet (ISP)!\n\n**Problema resolvido:** ISPs sem sistema de ordens de serviço em campo — técnicos usavam papel ou WhatsApp.\n\n**Solução em 3 camadas:**\n📱 App Mobile Flutter — usado pelos técnicos em campo (offline, GPS, upload de fotos, OTA updates via Shorebird)\n💻 Painel Web Streamlit — gestores acompanham em tempo real (KPIs, gráficos Plotly, multi-empresa)\n🗄️ Backend Supabase — PostgreSQL, Storage e Realtime\n\n**Site:** https://tarefasprovedor.com/\n**Repositório:** Privado";
+    }
+
+    return "Sou o assistente do Lukas! Posso falar sobre projetos (incluindo BarberLost e TarefasProvedor, que estão em produção para clientes reais), tecnologias e experiência. O que te interessa?";
   }
 
   /**
@@ -312,19 +332,19 @@ export class GroqService {
    * @param {string} text - Texto completo da resposta
    * @yields {string} Palavras individuais da resposta
    */
-  async *createAsyncIterator(text) {
-    // Simula delay inicial de "pensamento" da IA (1.5-2.5s)
+  async *createAsyncIterator(text, signal) {
     await new Promise((resolve) =>
       setTimeout(resolve, 1500 + Math.random() * 1000)
     );
 
-    // Divide texto em palavras para streaming
+    if (signal?.aborted) return;
+
     const words = text.split(" ");
 
     for (let i = 0; i < words.length; i++) {
+      if (signal?.aborted) return;
       yield (i > 0 ? " " : "") + words[i];
 
-      // Delay variável entre palavras (50-150ms) para simular digitação natural
       if (i < words.length - 1) {
         await new Promise((resolve) =>
           setTimeout(resolve, 50 + Math.random() * 100)
